@@ -2,37 +2,154 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
-<title>Accès Fiche Amitié</title>
+<title>Fiche Amitié - Accès Sécurisé</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-    body { font-family: Arial, sans-serif; max-width: 600px; margin: 2rem auto; }
-    section { margin-top: 20px; }
-    label, input, button { display: block; margin: 10px 0; width: 100%; max-width: 400px; }
-    pre { background: #f0f0f0; padding: 10px; white-space: pre-wrap; }
+    /* Styles généraux */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f7f6; /* Fond très clair */
+        color: #333; /* Texte sombre pour la lisibilité */
+        margin: 0;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* Aligne en haut */
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    /* Conteneur principal */
+    .container {
+        background-color: #ffffff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Ombre douce */
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        color: #2c3e50; /* Bleu foncé */
+        margin-bottom: 30px;
+        font-weight: 600;
+        font-size: 2em;
+    }
+
+    section {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        text-align: left;
+        margin-bottom: 8px;
+        margin-top: 15px;
+        color: #555;
+        font-weight: 400;
+        font-size: 0.95em;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: calc(100% - 20px); /* Ajuste la largeur pour le padding */
+        padding: 12px 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        font-size: 1em;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: #007bff; /* Bleu primaire au focus */
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        outline: none;
+    }
+
+    button {
+        background-color: #007bff; /* Bleu primaire */
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    button:hover {
+        background-color: #0056b3; /* Bleu plus foncé au survol */
+        transform: translateY(-2px); /* Léger effet de soulèvement */
+    }
+
+    /* Messages d'erreur */
+    #login-error {
+        color: #dc3545; /* Rouge pour les erreurs */
+        margin-top: 15px;
+        font-size: 0.9em;
+        font-weight: 400;
+    }
+
+    /* Zone de résultat */
+    pre {
+        background: #e9ecef; /* Fond gris clair */
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 25px;
+        text-align: left;
+        line-height: 1.6;
+        color: #343a40; /* Texte sombre */
+        font-size: 1.05em;
+        border: 1px solid #dee2e6;
+    }
+
+    /* Note pour le développeur (si visible, bien que retirée pour l'utilisateur final) */
+    .note {
+        background-color: #fff3cd; /* Jaune clair */
+        border-left: 6px solid #ffc107; /* Bordure jaune */
+        padding: 15px;
+        margin-bottom: 25px;
+        border-radius: 8px;
+        color: #856404;
+        font-size: 0.9em;
+        text-align: left;
+    }
+    .note p {
+        margin: 0;
+    }
 </style>
 </head>
 <body>
 
-<h1>Accès à votre Fiche Amitié</h1>
+<div class="container">
+    <h1>Accès à votre Fiche Amitié</h1>
 
-<section id="user-login-section">
-    <label for="input-first-name">Votre Prénom :</label>
-    <input type="text" id="input-first-name" placeholder="Ex: Jean" />
-    
-    <label for="input-last-name">Votre Nom :</label>
-    <input type="text" id="input-last-name" placeholder="Ex: Dupont" />
-    
-    <label for="input-password">Votre Mot de passe :</label>
-    <input type="password" id="input-password" />
-    
-    <button onclick="accessFriendshipFile()">Accéder à ma fiche</button>
-    
-    <p id="login-error" style="color:red;"></p>
-    
-    <pre id="user-result" style="display: none;"></pre>
-</section>
+    <section id="user-login-section">
+        <label for="input-first-name">Votre Prénom :</label>
+        <input type="text" id="input-first-name" placeholder="Ex: Jean" />
+        
+        <label for="input-last-name">Votre Nom :</label>
+        <input type="text" id="input-last-name" placeholder="Ex: Dupont" />
+        
+        <label for="input-password">Votre Mot de passe :</label>
+        <input type="password" id="input-password" />
+        
+        <button onclick="accessFriendshipFile()">Accéder à ma fiche</button>
+        
+        <p id="login-error" style="color:red;"></p>
+        
+        <pre id="user-result" style="display: none;"></pre>
+    </section>
+</div>
 
 <script src="data.js"></script> <script>
-    // Rangs selon points
+    // Rangs selon points (avec icônes)
     function getRank(points) {
         if (points === 0) return '❌ Suspendue';
         if (points <= 9) return '🕶️ Connaissance';
@@ -56,16 +173,16 @@
         const loginError = document.getElementById('login-error');
         const userResult = document.getElementById('user-result');
 
-        loginError.textContent = ''; // Reset error message
-        userResult.style.display = 'none'; // Hide previous result
-        userResult.textContent = ''; // Clear previous result
+        loginError.textContent = ''; // Réinitialise le message d'erreur
+        userResult.style.display = 'none'; // Cache le résultat précédent
+        userResult.textContent = ''; // Vide le résultat précédent
 
         if (!inputFirstName || !inputLastName || !inputPassword) {
             loginError.textContent = 'Veuillez remplir tous les champs.';
             return;
         }
 
-        // Search for the user in the 'usersData' array, which comes from data.js
+        // Recherche de l'utilisateur dans le tableau 'usersData', qui vient de data.js
         const foundUser = usersData.find(user => 
             user.firstName.toLowerCase() === inputFirstName.toLowerCase() &&
             user.lastName.toLowerCase() === inputLastName.toLowerCase() &&
@@ -79,7 +196,7 @@
                 `Nom : ${foundUser.lastName}\n` +
                 `Points d’amitié : ${foundUser.points}\n` +
                 `Rang : ${rank}`;
-            userResult.style.display = 'block'; // Show result
+            userResult.style.display = 'block'; // Affiche le résultat
         } else {
             loginError.textContent = 'Informations de connexion incorrectes.';
         }
