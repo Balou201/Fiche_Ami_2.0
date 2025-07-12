@@ -29,7 +29,7 @@ const usersData = [
     {
         firstName: 'Victory-Anna',
         lastName: 'Da Costa',
-        password: 'default',
+        password: 'G14nn1LEGOAT',
         points: 65
     },
     {
