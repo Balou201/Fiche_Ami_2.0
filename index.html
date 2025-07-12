@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
-<title>Accès Fiche Amitié (Direct)</title>
+<title>Accès Fiche Amitié</title>
 <style>
     body { font-family: Arial, sans-serif; max-width: 600px; margin: 2rem auto; }
     section { margin-top: 20px; }
@@ -31,39 +31,7 @@
     <pre id="user-result" style="display: none;"></pre>
 </section>
 
-<script>
-    // --- SECTION À MODIFIER DIRECTEMENT POUR DÉFINIR LES FICHES ---
-    // Chaque objet dans ce tableau représente une fiche d'amitié.
-    // MODIFIEZ CE TABLEAU pour ajouter, retirer ou modifier des personnes et leurs points.
-    const usersData = [
-        {
-            firstName: 'Sybille',
-            lastName: 'Vignal',
-            password: 'motdepassejean',
-            points: 150
-        },
-        {
-            firstName: 'Gianni',
-            lastName: 'Blaz',
-            password: 'Exp22',
-            points: 250
-        },
-        {
-            firstName: 'Sophie',
-            lastName: 'Martin',
-            password: 'passsophie',
-            points: 80
-        },
-        // Ajoutez d'autres personnes ici :
-        // {
-        //     firstName: 'TonPrénom',
-        //     lastName: 'TonNom',
-        //     password: 'TonMotDePasse',
-        //     points: 100
-        // }
-    ];
-    // --- FIN DE LA SECTION À MODIFIABLE ---
-
+<script src="data.js"></script> <script>
     // Rangs selon points
     function getRank(points) {
         if (points === 0) return '❌ Suspendue';
@@ -88,16 +56,16 @@
         const loginError = document.getElementById('login-error');
         const userResult = document.getElementById('user-result');
 
-        loginError.textContent = ''; // Réinitialise le message d'erreur
-        userResult.style.display = 'none'; // Cache le résultat précédent
-        userResult.textContent = ''; // Vide le résultat précédent
+        loginError.textContent = ''; // Reset error message
+        userResult.style.display = 'none'; // Hide previous result
+        userResult.textContent = ''; // Clear previous result
 
         if (!inputFirstName || !inputLastName || !inputPassword) {
             loginError.textContent = 'Veuillez remplir tous les champs.';
             return;
         }
 
-        // Recherche de l'utilisateur dans le tableau usersData
+        // Search for the user in the 'usersData' array, which comes from data.js
         const foundUser = usersData.find(user => 
             user.firstName.toLowerCase() === inputFirstName.toLowerCase() &&
             user.lastName.toLowerCase() === inputLastName.toLowerCase() &&
@@ -111,7 +79,7 @@
                 `Nom : ${foundUser.lastName}\n` +
                 `Points d’amitié : ${foundUser.points}\n` +
                 `Rang : ${rank}`;
-            userResult.style.display = 'block'; // Affiche le résultat
+            userResult.style.display = 'block'; // Show result
         } else {
             loginError.textContent = 'Informations de connexion incorrectes.';
         }
