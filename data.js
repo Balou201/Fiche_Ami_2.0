@@ -35,8 +35,8 @@ const usersData = [
     {
         firstName: 'Joël',
         lastName: 'Lagadec',
-        password: 'default',
-        points: 
+        password: 'XXX2025/2026',
+        points: 74
     },
     // Ajoutez d'autres personnes ici :
     // {
