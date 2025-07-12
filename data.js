@@ -5,7 +5,7 @@ const usersData = [
     {
         firstName: 'Sybille',
         lastName: 'Vignal',
-        password: 'motdepassejean',
+        password: 'Boubourette11@',
         points: 161
     },
     {
@@ -31,6 +31,12 @@ const usersData = [
         lastName: 'Da Costa',
         password: 'default',
         points: 65
+    },
+    {
+        firstName: 'Joël',
+        lastName: 'Lagadec',
+        password: 'default',
+        points: 
     },
     // Ajoutez d'autres personnes ici :
     // {
