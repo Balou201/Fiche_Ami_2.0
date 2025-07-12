@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Accès Fiche Amitié (Direct)</title>
+<style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 2rem auto; }
+    section { margin-top: 20px; }
+    label, input, button { display: block; margin: 10px 0; width: 100%; max-width: 400px; }
+    pre { background: #f0f0f0; padding: 10px; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+
+<h1>Accès à votre Fiche Amitié</h1>
+
+<section id="user-login-section">
+    <label for="input-first-name">Votre Prénom :</label>
+    <input type="text" id="input-first-name" placeholder="Ex: Jean" />
+    
+    <label for="input-last-name">Votre Nom :</label>
+    <input type="text" id="input-last-name" placeholder="Ex: Dupont" />
+    
+    <label for="input-password">Votre Mot de passe :</label>
+    <input type="password" id="input-password" />
+    
+    <button onclick="accessFriendshipFile()">Accéder à ma fiche</button>
+    
+    <p id="login-error" style="color:red;"></p>
+    
+    <pre id="user-result" style="display: none;"></pre>
+</section>
+
+<script>
+    // --- SECTION À MODIFIER DIRECTEMENT POUR DÉFINIR LES FICHES ---
+    // Chaque objet dans ce tableau représente une fiche d'amitié.
+    // MODIFIEZ CE TABLEAU pour ajouter, retirer ou modifier des personnes et leurs points.
+    const usersData = [
+        {
+            firstName: 'Sybille',
+            lastName: 'Vignal',
+            password: 'motdepassejean',
+            points: 150
+        },
+        {
+            firstName: 'Gianni',
+            lastName: 'Blaz',
+            password: 'Exp22',
+            points: 250
+        },
+        {
+            firstName: 'Sophie',
+            lastName: 'Martin',
+            password: 'passsophie',
+            points: 80
+        },
+        // Ajoutez d'autres personnes ici :
+        // {
+        //     firstName: 'TonPrénom',
+        //     lastName: 'TonNom',
+        //     password: 'TonMotDePasse',
+        //     points: 100
+        // }
+    ];
+    // --- FIN DE LA SECTION À MODIFIABLE ---
+
+    // Rangs selon points
+    function getRank(points) {
+        if (points === 0) return '❌ Suspendue';
+        if (points <= 9) return '🕶️ Connaissance';
+        if (points <= 24) return '👋 Camarade';
+        if (points <= 49) return '😊 Pote';
+        if (points <= 74) return '🤗 Bon ami';
+        if (points <= 99) return '💛 Ami proche';
+        if (points <= 124) return '💎 Ami précieux';
+        if (points <= 149) return '🔒 Ami fidèle';
+        if (points <= 174) return '🔥 Ami de cœur';
+        if (points <= 199) return '🌟 Ami d’exception';
+        if (points >= 200) return '👑 Amitié légendaire';
+        return 'Inconnu';
+    }
+
+    // Fonction d'accès à la fiche d'amitié
+    function accessFriendshipFile() {
+        const inputFirstName = document.getElementById('input-first-name').value.trim();
+        const inputLastName = document.getElementById('input-last-name').value.trim();
+        const inputPassword = document.getElementById('input-password').value.trim();
+        const loginError = document.getElementById('login-error');
+        const userResult = document.getElementById('user-result');
+
+        loginError.textContent = ''; // Réinitialise le message d'erreur
+        userResult.style.display = 'none'; // Cache le résultat précédent
+        userResult.textContent = ''; // Vide le résultat précédent
+
+        if (!inputFirstName || !inputLastName || !inputPassword) {
+            loginError.textContent = 'Veuillez remplir tous les champs.';
+            return;
+        }
+
+        // Recherche de l'utilisateur dans le tableau usersData
+        const foundUser = usersData.find(user => 
+            user.firstName.toLowerCase() === inputFirstName.toLowerCase() &&
+            user.lastName.toLowerCase() === inputLastName.toLowerCase() &&
+            user.password === inputPassword
+        );
+
+        if (foundUser) {
+            const rank = getRank(foundUser.points);
+            userResult.textContent = 
+                `Prénom : ${foundUser.firstName}\n` +
+                `Nom : ${foundUser.lastName}\n` +
+                `Points d’amitié : ${foundUser.points}\n` +
+                `Rang : ${rank}`;
+            userResult.style.display = 'block'; // Affiche le résultat
+        } else {
+            loginError.textContent = 'Informations de connexion incorrectes.';
+        }
+    }
+</script>
+
+</body>
+</html>
