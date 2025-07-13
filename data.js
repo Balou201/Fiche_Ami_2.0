@@ -56,6 +56,12 @@ const usersData = [
         password: 'Mot de passe oublié',
         points: 170
     },
+    {
+        firstName: 'Leda',
+        lastName: 'Tiste',
+        password: '!ticket',
+        points: 60
+    },
     // Ajoutez d'autres personnes ici :
     // {
     //     firstName: 'TonPrénom',
