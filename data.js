@@ -63,6 +63,12 @@ const usersData = [
         points: 60
     },
     {
+        firstName: 'Denisa',
+        lastName: 'Gherasim',
+        password: 'Denisa142012_94.',
+        points: 39
+    },
+    {
         firstName: 'Taylor',
         lastName: 'Dejussel',
         password: 'Grizouthegoats',
