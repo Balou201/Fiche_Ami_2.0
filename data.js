@@ -62,6 +62,12 @@ const usersData = [
         password: '!ticket',
         points: 60
     },
+    {
+        firstName: 'Taylor',
+        lastName: 'Dejussel',
+        password: 'Grizouthegoats',
+        points: 80
+    },
     // Ajoutez d'autres personnes ici :
     // {
     //     firstName: 'TonPrénom',
