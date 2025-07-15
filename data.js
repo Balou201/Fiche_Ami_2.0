@@ -53,7 +53,7 @@ const usersData = [
     {
         firstName: 'Louise',
         lastName: 'Lebadi',
-        password: 'Mot de passe oublié',
+        password: 'Giannietlouise',
         points: 170
     },
     {
