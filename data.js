@@ -74,6 +74,12 @@ const usersData = [
         password: 'Grizouthegoats',
         points: 80
     },
+    {
+        firstName: 'Ethan',
+        lastName: 'Beranger',
+        password: 'FireBird30&',
+        points: 71
+    },
     // Ajoutez d'autres personnes ici :
     // {
     //     firstName: 'TonPrénom',
