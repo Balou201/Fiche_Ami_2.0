@@ -86,6 +86,12 @@ const usersData = [
         password: '1234',
         points: 80
     },
+    {
+        firstName: 'Yassine',
+        lastName: 'Bennaceur',
+        password: 'Yassben2013',
+        points: 100
+    },
     // Ajoutez d'autres personnes ici :
     // {
     //     firstName: 'TonPrénom',
