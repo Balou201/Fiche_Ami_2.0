@@ -30,7 +30,7 @@ const usersData = [
         firstName: 'Victory-Anna',
         lastName: 'Da Costa',
         password: 'G14nn1LEGOAT',
-        points: 65
+        points: 71
     },
     {
         firstName: 'Joël',
