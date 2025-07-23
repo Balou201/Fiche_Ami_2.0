@@ -5,98 +5,145 @@ const usersData = [
     {
         firstName: 'Sybille',
         lastName: 'Vignal',
-        password: 'Boubourette11@',
-        points: 169
+        password: 'Boubourette11@', // Mot de passe original, à remplacer par le vrai si différent
+        points: 169,
+        dateOfBirth: '13 décembre 2011 à 8h00',
+        address: '13 Rue de la République a Magenta (51530)',
+        phoneNumber: '07 44 71 72 18'
     },
     {
-        firstName: 'Gianni',
+        firstName: 'Gianni', // Informations de Gianni conservées de la version précédente car non fournies ici
         lastName: 'Blaz',
         password: 'Exp22',
-        points: 999
+        points: 999,
+        dateOfBirth: 'Inconnue',
+        address: 'Inconnue',
+        phoneNumber: 'Inconnu'
     },
     {
         firstName: 'Ines',
         lastName: 'Lahouazi',
-        password: 'Inesjade2012?',
-        points: 89
+        password: 'Inesjade2012?', // Mot de passe original, à remplacer par le vrai si différent
+        points: 74,
+        dateOfBirth: '21 mars 2012',
+        address: 'Inconnue',
+        phoneNumber: '06 66 91 14 01'
+    },
+    {
+        firstName: 'Noa',
+        lastName: 'Marcel',
+        password: 'MotDePasseNoa', // Ajoutez le vrai mot de passe de Noa ici
+        points: 0,
+        dateOfBirth: '12 avril 2011',
+        address: 'Inconnue',
+        phoneNumber: 'Inconnue'
     },
     {
         firstName: 'Gabin',
         lastName: 'Lefevre',
-        password: 'PuLsViTe55',
-        points: 109
+        password: 'PuLsViTe55', // Mot de passe original, à remplacer par le vrai si différent
+        points: 109,
+        dateOfBirth: '04 avril 2012',
+        address: 'Inconnue',
+        phoneNumber: 'Inconnue'
     },
     {
         firstName: 'Victory-Anna',
         lastName: 'Da Costa',
-        password: 'G14nn1LEGOAT',
-        points: 71
+        password: 'G14nn1LEGOAT', // Mot de passe original, à remplacer par le vrai si différent
+        points: 65,
+        dateOfBirth: '4 mars 2012',
+        address: 'Inconnue',
+        phoneNumber: '07 66 60 24 60'
     },
     {
         firstName: 'Joël',
         lastName: 'Lagadec',
-        password: 'XXX2025/2026',
-        points: 74
+        password: 'XXX2025/2026', // Mot de passe original, à remplacer par le vrai si différent
+        points: 74,
+        dateOfBirth: '10 avril 2012',
+        address: 'Inconnue',
+        phoneNumber: '07 75 74 14 36'
     },
     {
         firstName: 'Joshua',
         lastName: 'Martins Vavak',
-        password: 'JshGia2012',
-        points: 48
+        password: 'JshGia2012', // Mot de passe original, à remplacer par le vrai si différent
+        points: 48,
+        dateOfBirth: '27 juillet 2012',
+        address: 'Inconnue',
+        phoneNumber: '07 64 85 79 15'
     },
     {
         firstName: 'Nathanaël',
         lastName: 'Meaupin',
-        password: 'Mot de passe oublié',
-        points: 8
+        password: 'Mot de passe oublié', // Mot de passe original, à remplacer par le vrai si différent
+        points: 8,
+        dateOfBirth: '21 juin 2012',
+        address: 'Inconnue',
+        phoneNumber: '07 85 97 84 78'
     },
     {
         firstName: 'Louise',
         lastName: 'Lebadi',
-        password: 'Giannietlouise',
-        points: 170
-    },
-    {
-        firstName: 'Leda',
-        lastName: 'Tiste',
-        password: '!ticket',
-        points: 60
-    },
-    {
-        firstName: 'Denisa',
-        lastName: 'Gherasim',
-        password: 'Denisa142012_94.',
-        points: 39
+        password: 'Giannietlouise', // Mot de passe original, à remplacer par le vrai si différent
+        points: 170,
+        dateOfBirth: '13 mars 2012',
+        address: '148 avenue Gabriel Péri. (94 170) Le Perreux',
+        phoneNumber: '07 49 52 38 30'
     },
     {
         firstName: 'Taylor',
         lastName: 'Dejussel',
-        password: 'Grizouthegoats',
-        points: 80
+        password: 'Grizouthegoats', // Mot de passe original, à remplacer par le vrai si différent
+        points: 80,
+        dateOfBirth: '5 juillet 2012',
+        address: 'Inconnue',
+        phoneNumber: '07 49 52 38 30'
+    },
+    {
+        firstName: 'Leda',
+        lastName: 'Tiste',
+        password: '!ticket', // Mot de passe original, à remplacer par le vrai si différent
+        points: 80,
+        dateOfBirth: '7 juillet 2010',
+        address: 'Inconnue',
+        phoneNumber: 'Inconnue'
+    },
+    {
+        firstName: 'Denisa',
+        lastName: 'Gherasim',
+        password: 'Denisa142012_94.', // Mot de passe original, à remplacer par le vrai si différent
+        points: 39,
+        dateOfBirth: '14 mars 2012',
+        address: 'Inconnue',
+        phoneNumber: '07 83 76 64 01'
     },
     {
         firstName: 'Ethan',
         lastName: 'Beranger',
-        password: 'FireBird30&',
-        points: 71
+        password: 'FireBird30&', // Mot de passe original, à remplacer par le vrai si différent
+        points: 71,
+        dateOfBirth: '4 février 2011',
+        address: 'Inconnue',
+        phoneNumber: 'Inconnue'
     },
     {
         firstName: 'Marilou',
         lastName: 'Longuèvre',
-        password: '1234',
-        points: 80
+        password: '1234', // Mot de passe original, à remplacer par le vrai si différent
+        points: 81,
+        dateOfBirth: '19 Aout 2009',
+        address: 'Inconnue',
+        phoneNumber: '06 18 42 52 80'
     },
     {
         firstName: 'Yassine',
         lastName: 'Bennaceur',
-        password: 'Yassben2013',
-        points: 100
+        password: 'Yassben2013', // Mot de passe original, à remplacer par le vrai si différent
+        points: 100,
+        dateOfBirth: '24 juin 2013',
+        address: 'Inconnue',
+        phoneNumber: 'Inconnue'
     },
-    // Ajoutez d'autres personnes ici :
-    // {
-    //     firstName: 'TonPrénom',
-    //     lastName: 'TonNom',
-    //     password: 'TonMotDePasse',
-    //     points: 100
-    // }
 ];
