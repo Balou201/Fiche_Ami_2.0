@@ -133,22 +133,23 @@
     <section id="user-login-section">
         <label for="input-first-name">Votre Prénom :</label>
         <input type="text" id="input-first-name" placeholder="Ex: Jean" />
-        
+
         <label for="input-last-name">Votre Nom :</label>
         <input type="text" id="input-last-name" placeholder="Ex: Dupont" />
-        
+
         <label for="input-password">Votre Mot de passe :</label>
         <input type="password" id="input-password" />
-        
+
         <button onclick="accessFriendshipFile()">Accéder à ma fiche</button>
-        
+
         <p id="login-error" style="color:red;"></p>
-        
+
         <pre id="user-result" style="display: none;"></pre>
     </section>
 </div>
 
-<script src="data.js"></script> <script>
+<script src="data.js"></script>
+<script>
     // Rangs selon points (avec icônes)
     function getRank(points) {
         if (points === 0) return '❌ Suspendue';
@@ -183,7 +184,7 @@
         }
 
         // Recherche de l'utilisateur dans le tableau 'usersData', qui vient de data.js
-        const foundUser = usersData.find(user => 
+        const foundUser = usersData.find(user =>
             user.firstName.toLowerCase() === inputFirstName.toLowerCase() &&
             user.lastName.toLowerCase() === inputLastName.toLowerCase() &&
             user.password === inputPassword
@@ -191,11 +192,15 @@
 
         if (foundUser) {
             const rank = getRank(foundUser.points);
-            userResult.textContent = 
+            userResult.textContent =
                 `Prénom : ${foundUser.firstName}\n` +
                 `Nom : ${foundUser.lastName}\n` +
                 `Points d’amitié : ${foundUser.points}\n` +
-                `Rang : ${rank}`;
+                `Rang : ${rank}\n\n` +
+                `📋 Informations personnelles :\n` +
+                `Date de naissance : ${foundUser.dateOfBirth || 'Non renseignée'}\n` +
+                `Adresse : ${foundUser.address || 'Non renseignée'}\n` +
+                `Numéro de téléphone : ${foundUser.phoneNumber || 'Non renseigné'}`;
             userResult.style.display = 'block'; // Affiche le résultat
         } else {
             loginError.textContent = 'Informations de connexion incorrectes.';
