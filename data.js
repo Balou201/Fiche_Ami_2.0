@@ -6,7 +6,7 @@ const usersData = [
         firstName: 'Sybille',
         lastName: 'Vignal',
         password: 'Boubourette11@', // Mot de passe original, à remplacer par le vrai si différent
-        points: 169,
+        points: 177,
         dateOfBirth: '13 décembre 2011 à 8h00',
         address: '13 Rue de la République a Magenta (51530)',
         phoneNumber: '07 44 71 72 18'
@@ -24,25 +24,16 @@ const usersData = [
         firstName: 'Ines',
         lastName: 'Lahouazi',
         password: 'Inesjade2012?', // Mot de passe original, à remplacer par le vrai si différent
-        points: 74,
+        points: 72,
         dateOfBirth: '21 mars 2012',
         address: 'Inconnue',
         phoneNumber: '06 66 91 14 01'
     },
     {
-        firstName: 'Noa',
-        lastName: 'Marcel',
-        password: 'MotDePasseNoa', // Ajoutez le vrai mot de passe de Noa ici
-        points: 0,
-        dateOfBirth: '12 avril 2011',
-        address: 'Inconnue',
-        phoneNumber: 'Inconnue'
-    },
-    {
         firstName: 'Gabin',
         lastName: 'Lefevre',
         password: 'PuLsViTe55', // Mot de passe original, à remplacer par le vrai si différent
-        points: 109,
+        points: 112,
         dateOfBirth: '04 avril 2012',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
@@ -51,7 +42,7 @@ const usersData = [
         firstName: 'Victory-Anna',
         lastName: 'Da Costa',
         password: 'G14nn1LEGOAT', // Mot de passe original, à remplacer par le vrai si différent
-        points: 65,
+        points: 69,
         dateOfBirth: '4 mars 2012',
         address: 'Inconnue',
         phoneNumber: '07 66 60 24 60'
@@ -60,34 +51,16 @@ const usersData = [
         firstName: 'Joël',
         lastName: 'Lagadec',
         password: 'XXX2025/2026', // Mot de passe original, à remplacer par le vrai si différent
-        points: 74,
+        points: 75,
         dateOfBirth: '10 avril 2012',
         address: 'Inconnue',
         phoneNumber: '07 75 74 14 36'
     },
     {
-        firstName: 'Joshua',
-        lastName: 'Martins Vavak',
-        password: 'JshGia2012', // Mot de passe original, à remplacer par le vrai si différent
-        points: 48,
-        dateOfBirth: '27 juillet 2012',
-        address: 'Inconnue',
-        phoneNumber: '07 64 85 79 15'
-    },
-    {
-        firstName: 'Nathanaël',
-        lastName: 'Meaupin',
-        password: 'Mot de passe oublié', // Mot de passe original, à remplacer par le vrai si différent
-        points: 8,
-        dateOfBirth: '21 juin 2012',
-        address: 'Inconnue',
-        phoneNumber: '07 85 97 84 78'
-    },
-    {
         firstName: 'Louise',
         lastName: 'Lebadi',
         password: 'Giannietlouise', // Mot de passe original, à remplacer par le vrai si différent
-        points: 170,
+        points: 171,
         dateOfBirth: '13 mars 2012',
         address: '148 avenue Gabriel Péri. (94 170) Le Perreux',
         phoneNumber: '07 49 52 38 30'
@@ -96,7 +69,7 @@ const usersData = [
         firstName: 'Taylor',
         lastName: 'Dejussel',
         password: 'Grizouthegoats', // Mot de passe original, à remplacer par le vrai si différent
-        points: 80,
+        points: 81,
         dateOfBirth: '5 juillet 2012',
         address: 'Inconnue',
         phoneNumber: '07 49 52 38 30'
@@ -105,7 +78,7 @@ const usersData = [
         firstName: 'Leda',
         lastName: 'Tiste',
         password: '!ticket', // Mot de passe original, à remplacer par le vrai si différent
-        points: 80,
+        points: 90,
         dateOfBirth: '7 juillet 2010',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
@@ -114,7 +87,7 @@ const usersData = [
         firstName: 'Denisa',
         lastName: 'Gherasim',
         password: 'Denisa142012_94.', // Mot de passe original, à remplacer par le vrai si différent
-        points: 39,
+        points: 40,
         dateOfBirth: '14 mars 2012',
         address: 'Inconnue',
         phoneNumber: '07 83 76 64 01'
@@ -123,7 +96,7 @@ const usersData = [
         firstName: 'Ethan',
         lastName: 'Beranger',
         password: 'FireBird30&', // Mot de passe original, à remplacer par le vrai si différent
-        points: 71,
+        points: 130,
         dateOfBirth: '4 février 2011',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
@@ -132,21 +105,11 @@ const usersData = [
         firstName: 'Marilou',
         lastName: 'Longuèvre',
         password: '1234', // Mot de passe original, à remplacer par le vrai si différent
-        points: 81,
+        points: 83,
         dateOfBirth: '19 Aout 2009',
         address: 'Inconnue',
         phoneNumber: '06 18 42 52 80'
     },
-    {
-        firstName: 'Yassine',
-        lastName: 'Bennaceur',
-        password: 'Yassben2013', // Mot de passe original, à remplacer par le vrai si différent
-        points: 100,
-        dateOfBirth: '24 juin 2013',
-        address: 'Inconnue',
-        phoneNumber: 'Inconnue'
-    },
-
     {
         firstName: 'Hugo',
         lastName: 'Hejelouis',
