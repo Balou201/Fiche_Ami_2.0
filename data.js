@@ -146,4 +146,14 @@ const usersData = [
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
+
+    {
+        firstName: 'Hugo',
+        lastName: 'Hejelouis',
+        password: 'Pell!883::%9,_*', // Mot de passe original, à remplacer par le vrai si différent
+        points: 180,
+        dateOfBirth: '3 septembre 2012',
+        address: 'Inconnue',
+        phoneNumber: 'Inconnue'
+    },
 ];
