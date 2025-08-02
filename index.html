@@ -2,19 +2,20 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fiche Amitié - Accès Sécurisé</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
     /* Styles généraux */
     body {
         font-family: 'Poppins', sans-serif;
-        background-color: #f4f7f6; /* Fond très clair */
-        color: #333; /* Texte sombre pour la lisibilité */
+        background-color: #f0f2f5; /* Fond très clair et moderne */
+        color: #333;
         margin: 0;
         padding: 2rem;
         display: flex;
         justify-content: center;
-        align-items: flex-start; /* Aligne en haut */
+        align-items: center;
         min-height: 100vh;
         box-sizing: border-box;
     }
@@ -22,23 +23,36 @@
     /* Conteneur principal */
     .container {
         background-color: #ffffff;
-        padding: 30px 40px;
+        padding: 40px;
         border-radius: 12px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Ombre douce */
-        max-width: 500px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        max-width: 550px;
         width: 100%;
         text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    /* Conteneur de la fiche de résultat */
+    .result-container {
+        background-color: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 30px;
+        text-align: left;
+        margin-top: 20px;
     }
 
     h1 {
-        color: #2c3e50; /* Bleu foncé */
+        color: #1e3a8a; /* Bleu plus profond */
         margin-bottom: 30px;
         font-weight: 600;
-        font-size: 2em;
+        font-size: 2.2em;
     }
 
-    section {
-        margin-top: 20px;
+    h2 {
+        color: #1e3a8a;
+        font-size: 1.5em;
+        margin-top: 0;
     }
 
     label {
@@ -53,24 +67,25 @@
 
     input[type="text"],
     input[type="password"] {
-        width: calc(100% - 20px); /* Ajuste la largeur pour le padding */
-        padding: 12px 10px;
+        width: 100%;
+        padding: 12px 15px;
         margin-bottom: 15px;
-        border: 1px solid #ced4da;
+        border: 1px solid #dcdfe6;
         border-radius: 8px;
         font-size: 1em;
         transition: border-color 0.3s, box-shadow 0.3s;
+        box-sizing: border-box;
     }
 
     input[type="text"]:focus,
     input[type="password"]:focus {
-        border-color: #007bff; /* Bleu primaire au focus */
-        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
         outline: none;
     }
 
     button {
-        background-color: #007bff; /* Bleu primaire */
+        background-color: #4f46e5; /* Violet-Bleu élégant */
         color: white;
         padding: 12px 25px;
         border: none;
@@ -84,51 +99,74 @@
     }
 
     button:hover {
-        background-color: #0056b3; /* Bleu plus foncé au survol */
-        transform: translateY(-2px); /* Léger effet de soulèvement */
+        background-color: #3e38a8;
+        transform: translateY(-2px);
+    }
+
+    #logout-button {
+        background-color: #ef4444; /* Rouge pour le bouton de déconnexion */
+        margin-top: 15px;
+    }
+
+    #logout-button:hover {
+        background-color: #dc2626;
     }
 
     /* Messages d'erreur */
     #login-error {
-        color: #dc3545; /* Rouge pour les erreurs */
+        color: #ef4444; /* Rouge pour les erreurs */
         margin-top: 15px;
         font-size: 0.9em;
         font-weight: 400;
     }
 
-    /* Zone de résultat */
-    pre {
-        background: #e9ecef; /* Fond gris clair */
-        padding: 20px;
-        border-radius: 8px;
-        margin-top: 25px;
-        text-align: left;
-        line-height: 1.6;
-        color: #343a40; /* Texte sombre */
-        font-size: 1.05em;
-        border: 1px solid #dee2e6;
+    /* Liste des informations */
+    .info-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 20px 0;
     }
 
-    /* Note pour le développeur (si visible, bien que retirée pour l'utilisateur final) */
-    .note {
-        background-color: #fff3cd; /* Jaune clair */
-        border-left: 6px solid #ffc107; /* Bordure jaune */
-        padding: 15px;
-        margin-bottom: 25px;
-        border-radius: 8px;
-        color: #856404;
-        font-size: 0.9em;
-        text-align: left;
+    .info-list li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px dashed #e0e0e0;
+        font-size: 1.05em;
     }
-    .note p {
-        margin: 0;
+
+    .info-list li:last-child {
+        border-bottom: none;
+    }
+
+    .info-list .label {
+        font-weight: 600;
+        color: #1f2937;
+    }
+
+    .info-list .value {
+        color: #4b5563;
+        text-align: right;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+        body {
+            padding: 1rem;
+        }
+        .container {
+            padding: 30px 20px;
+        }
+        h1 {
+            font-size: 1.8em;
+        }
     }
 </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Accès à votre Fiche Amitié</h1>
+    <h1 id="main-title">Accès à votre Fiche Amitié</h1>
 
     <section id="user-login-section">
         <label for="input-first-name">Votre Prénom :</label>
@@ -142,15 +180,52 @@
 
         <button onclick="accessFriendshipFile()">Accéder à ma fiche</button>
 
-        <p id="login-error" style="color:red;"></p>
+        <p id="login-error"></p>
+    </section>
 
-        <pre id="user-result" style="display: none;"></pre>
+    <section id="user-result-section" style="display: none;">
+        <div class="result-container">
+            <h2>Votre Fiche d'Amitié</h2>
+            <ul class="info-list" id="user-info-list">
+                </ul>
+        </div>
+        <button id="logout-button" onclick="logout()">Se déconnecter</button>
     </section>
 </div>
 
-<script src="data.js"></script>
 <script>
-    // Rangs selon points (avec icônes)
+    // Fichier data.js (simulé ici pour l'exemple)
+    const usersData = [
+        {
+            firstName: "Jean",
+            lastName: "Dupont",
+            password: "password123",
+            points: 155,
+            dateOfBirth: "15/05/1990",
+            address: "12 rue de la Paix, 75001 Paris",
+            phoneNumber: "06 12 34 56 78"
+        },
+        {
+            firstName: "Marie",
+            lastName: "Curie",
+            password: "atom",
+            points: 70,
+            dateOfBirth: "07/11/1867",
+            address: "1 Rue Pierre et Marie Curie, 75005 Paris",
+            phoneNumber: "01 45 67 89 00"
+        },
+        {
+            firstName: "Albert",
+            lastName: "Einstein",
+            password: "e=mc2",
+            points: 210,
+            dateOfBirth: "14/03/1879",
+            address: "112 Mercer St, Princeton, NJ 08540, USA",
+            phoneNumber: "Non renseigné"
+        }
+    ];
+
+    // Rangs selon points
     function getRank(points) {
         if (points === 0) return '❌ Suspendue';
         if (points <= 9) return '🕶️ Connaissance';
@@ -166,24 +241,38 @@
         return 'Inconnu';
     }
 
-    // Fonction d'accès à la fiche d'amitié
+    // Affiche la fiche de l'utilisateur
+    function displayFriendshipFile(user) {
+        document.getElementById('user-login-section').style.display = 'none';
+        document.getElementById('user-result-section').style.display = 'block';
+        document.getElementById('main-title').textContent = `Bonjour, ${user.firstName}!`;
+
+        const rank = getRank(user.points);
+        const userInfoList = document.getElementById('user-info-list');
+        userInfoList.innerHTML = `
+            <li><span class="label">Nom complet :</span><span class="value">${user.firstName} ${user.lastName}</span></li>
+            <li><span class="label">Points d’amitié :</span><span class="value">${user.points}</span></li>
+            <li><span class="label">Rang :</span><span class="value">${rank}</span></li>
+            <li><span class="label">Date de naissance :</span><span class="value">${user.dateOfBirth || 'Non renseignée'}</span></li>
+            <li><span class="label">Adresse :</span><span class="value">${user.address || 'Non renseignée'}</span></li>
+            <li><span class="label">Numéro de téléphone :</span><span class="value">${user.phoneNumber || 'Non renseigné'}</span></li>
+        `;
+    }
+
+    // Gère la connexion
     function accessFriendshipFile() {
         const inputFirstName = document.getElementById('input-first-name').value.trim();
         const inputLastName = document.getElementById('input-last-name').value.trim();
         const inputPassword = document.getElementById('input-password').value.trim();
         const loginError = document.getElementById('login-error');
-        const userResult = document.getElementById('user-result');
 
-        loginError.textContent = ''; // Réinitialise le message d'erreur
-        userResult.style.display = 'none'; // Cache le résultat précédent
-        userResult.textContent = ''; // Vide le résultat précédent
+        loginError.textContent = '';
 
         if (!inputFirstName || !inputLastName || !inputPassword) {
             loginError.textContent = 'Veuillez remplir tous les champs.';
             return;
         }
 
-        // Recherche de l'utilisateur dans le tableau 'usersData', qui vient de data.js
         const foundUser = usersData.find(user =>
             user.firstName.toLowerCase() === inputFirstName.toLowerCase() &&
             user.lastName.toLowerCase() === inputLastName.toLowerCase() &&
@@ -191,21 +280,27 @@
         );
 
         if (foundUser) {
-            const rank = getRank(foundUser.points);
-            userResult.textContent =
-                `Prénom : ${foundUser.firstName}\n` +
-                `Nom : ${foundUser.lastName}\n` +
-                `Points d’amitié : ${foundUser.points}\n` +
-                `Rang : ${rank}\n\n` +
-                `📋 Informations personnelles :\n` +
-                `Date de naissance : ${foundUser.dateOfBirth || 'Non renseignée'}\n` +
-                `Adresse : ${foundUser.address || 'Non renseignée'}\n` +
-                `Numéro de téléphone : ${foundUser.phoneNumber || 'Non renseigné'}`;
-            userResult.style.display = 'block'; // Affiche le résultat
+            localStorage.setItem('currentUser', JSON.stringify(foundUser));
+            displayFriendshipFile(foundUser);
         } else {
             loginError.textContent = 'Informations de connexion incorrectes.';
         }
     }
+
+    // Gère la déconnexion
+    function logout() {
+        localStorage.removeItem('currentUser');
+        location.reload(); // Recharge la page pour revenir à l'écran de connexion
+    }
+
+    // Vérifie au chargement de la page si un utilisateur est déjà connecté
+    window.onload = function() {
+        const currentUser = localStorage.getItem('currentUser');
+        if (currentUser) {
+            const user = JSON.parse(currentUser);
+            displayFriendshipFile(user);
+        }
+    };
 </script>
 
 </body>
