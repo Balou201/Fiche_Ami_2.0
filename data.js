@@ -69,7 +69,7 @@ const usersData = [
         firstName: 'Taylor',
         lastName: 'Dejussel',
         password: 'Grizouthegoats', // Mot de passe original, à remplacer par le vrai si différent
-        points: 81,
+        points: 121,
         dateOfBirth: '5 juillet 2012',
         address: 'Inconnue',
         phoneNumber: '07 49 52 38 30'
