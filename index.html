@@ -9,7 +9,7 @@
     /* Styles généraux */
     body {
         font-family: 'Poppins', sans-serif;
-        background-color: #f0f2f5; /* Fond très clair et moderne */
+        background-color: #f0f2f5;
         color: #333;
         margin: 0;
         padding: 2rem;
@@ -42,8 +42,22 @@
         margin-top: 20px;
     }
 
+    /* Conteneur de l'admin */
+    .admin-container {
+        background-color: #e6f7ff;
+        border: 1px solid #91d5ff;
+        border-radius: 10px;
+        padding: 30px;
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .admin-container h2 {
+        color: #1a73e8;
+    }
+
     h1 {
-        color: #1e3a8a; /* Bleu plus profond */
+        color: #1e3a8a;
         margin-bottom: 30px;
         font-weight: 600;
         font-size: 2.2em;
@@ -85,7 +99,7 @@
     }
 
     button {
-        background-color: #4f46e5; /* Violet-Bleu élégant */
+        background-color: #4f46e5;
         color: white;
         padding: 12px 25px;
         border: none;
@@ -104,7 +118,7 @@
     }
 
     #logout-button {
-        background-color: #ef4444; /* Rouge pour le bouton de déconnexion */
+        background-color: #ef4444;
         margin-top: 15px;
     }
 
@@ -114,7 +128,7 @@
 
     /* Messages d'erreur */
     #login-error {
-        color: #ef4444; /* Rouge pour les erreurs */
+        color: #ef4444;
         margin-top: 15px;
         font-size: 0.9em;
         font-weight: 400;
@@ -135,6 +149,17 @@
         font-size: 1.05em;
     }
 
+    .info-list li.sanction-warning {
+        color: #d97706;
+        font-weight: 600;
+        background-color: #fffbeb;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #fcd34d;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
     .info-list li:last-child {
         border-bottom: none;
     }
@@ -148,6 +173,54 @@
         color: #4b5563;
         text-align: right;
     }
+
+    /* Styles pour la liste de classement */
+    .ranking-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .ranking-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 1em;
+    }
+
+    .ranking-list li:last-child {
+        border-bottom: none;
+    }
+
+    .ranking-list .rank {
+        font-weight: 600;
+        color: #1e3a8a;
+        width: 30px;
+        text-align: left;
+    }
+
+    .ranking-list .name {
+        flex-grow: 1;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .ranking-list .points {
+        font-weight: 600;
+        color: #4f46e5;
+        width: 60px;
+        text-align: right;
+    }
+
+    .ranking-list .rank-name {
+        font-size: 0.9em;
+        color: #6b7280;
+        text-align: right;
+        width: 120px;
+    }
+
 
     /* Responsive Design */
     @media (max-width: 600px) {
@@ -185,215 +258,22 @@
 
     <section id="user-result-section" style="display: none;">
         <div class="result-container">
-            <h2>Votre Fiche d'Amitié</h2>
+            <h2 id="result-title">Votre Fiche d'Amitié</h2>
             <ul class="info-list" id="user-info-list">
                 </ul>
         </div>
         <button id="logout-button" onclick="logout()">Se déconnecter</button>
     </section>
+
+    <section id="admin-result-section" style="display: none;">
+        <div class="admin-container">
+            <h2>Classement des Amis (Accès Admin)</h2>
+            <ul class="ranking-list" id="admin-ranking-list"></ul>
+        </div>
+        <button id="logout-button-admin" onclick="logout()">Se déconnecter</button>
+    </section>
 </div>
-
-<script>
-    // --- SECTION À MODIFIER DIRECTEMENT POUR DÉFINIR LES FICHES ---
-    // Chaque objet dans ce tableau représente une fiche d'amitié.
-    // MODIFIEZ CE TABLEAU pour ajouter, retirer ou modifier des personnes et leurs points.
-    const usersData = [
-        {
-            firstName: 'Sybille',
-            lastName: 'Vignal',
-            password: 'Boubourette11@',
-            points: 177,
-            dateOfBirth: '13 décembre 2011 à 8h00',
-            address: '13 Rue de la République a Magenta (51530)',
-            phoneNumber: '07 44 71 72 18'
-        },
-        {
-            firstName: 'Gianni',
-            lastName: 'Blaz',
-            password: 'Exp22',
-            points: 999,
-            dateOfBirth: 'Inconnue',
-            address: 'Inconnue',
-            phoneNumber: 'Inconnu'
-        },
-        {
-            firstName: 'Ines',
-            lastName: 'Lahouazi',
-            password: 'Inesjade2012?',
-            points: 72,
-            dateOfBirth: '21 mars 2012',
-            address: 'Inconnue',
-            phoneNumber: '06 66 91 14 01'
-        },
-        {
-            firstName: 'Gabin',
-            lastName: 'Lefevre',
-            password: 'PuLsViTe55',
-            points: 112,
-            dateOfBirth: '04 avril 2012',
-            address: 'Inconnue',
-            phoneNumber: 'Inconnue'
-        },
-        {
-            firstName: 'Victory-Anna',
-            lastName: 'Da Costa',
-            password: 'G14nn1LEGOAT',
-            points: 69,
-            dateOfBirth: '4 mars 2012',
-            address: 'Inconnue',
-            phoneNumber: '07 66 60 24 60'
-        },
-        {
-            firstName: 'Joël',
-            lastName: 'Lagadec',
-            password: 'XXX2025/2026',
-            points: 75,
-            dateOfBirth: '10 avril 2012',
-            address: 'Inconnue',
-            phoneNumber: '07 75 74 14 36'
-        },
-        {
-            firstName: 'Louise',
-            lastName: 'Lebadi',
-            password: 'Giannietlouise',
-            points: 171,
-            dateOfBirth: '13 mars 2012',
-            address: '148 avenue Gabriel Péri. (94 170) Le Perreux',
-            phoneNumber: '07 49 52 38 30'
-        },
-        {
-            firstName: 'Taylor',
-            lastName: 'Dejussel',
-            password: 'Grizouthegoats',
-            points: 121,
-            dateOfBirth: '5 juillet 2012',
-            address: 'Inconnue',
-            phoneNumber: '07 49 52 38 30'
-        },
-        {
-            firstName: 'Leda',
-            lastName: 'Tiste',
-            password: '!ticket',
-            points: 90,
-            dateOfBirth: '7 juillet 2010',
-            address: 'Inconnue',
-            phoneNumber: 'Inconnue'
-        },
-        {
-            firstName: 'Denisa',
-            lastName: 'Gherasim',
-            password: 'Denisa142012_94.',
-            points: 40,
-            dateOfBirth: '14 mars 2012',
-            address: 'Inconnue',
-            phoneNumber: '07 83 76 64 01'
-        },
-        {
-            firstName: 'Ethan',
-            lastName: 'Beranger',
-            password: 'FireBird30&',
-            points: 130,
-            dateOfBirth: '4 février 2011',
-            address: 'Inconnue',
-            phoneNumber: 'Inconnue'
-        },
-        {
-            firstName: 'Marilou',
-            lastName: 'Longuèvre',
-            password: '1234',
-            points: 83,
-            dateOfBirth: '19 Aout 2009',
-            address: 'Inconnue',
-            phoneNumber: '06 18 42 52 80'
-        },
-        {
-            firstName: 'Hugo',
-            lastName: 'Hejelouis',
-            password: 'Pell!883::%9,_*',
-            points: 180,
-            dateOfBirth: '3 septembre 2012',
-            address: 'Inconnue',
-            phoneNumber: 'Inconnue'
-        },
-    ];
-
-    // Rangs selon points
-    function getRank(points) {
-        if (points === 0) return '❌ Suspendue';
-        if (points <= 9) return '🕶️ Connaissance';
-        if (points <= 24) return '👋 Camarade';
-        if (points <= 49) return '😊 Pote';
-        if (points <= 74) return '🤗 Bon ami';
-        if (points <= 99) return '💛 Ami proche';
-        if (points <= 124) return '💎 Ami précieux';
-        if (points <= 149) return '🔒 Ami fidèle';
-        if (points <= 174) return '🔥 Ami de cœur';
-        if (points <= 199) return '🌟 Ami d’exception';
-        if (points >= 200) return '👑 Amitié légendaire';
-        return 'Inconnu';
-    }
-
-    // Affiche la fiche de l'utilisateur
-    function displayFriendshipFile(user) {
-        document.getElementById('user-login-section').style.display = 'none';
-        document.getElementById('user-result-section').style.display = 'block';
-        document.getElementById('main-title').textContent = `Bonjour, ${user.firstName}!`;
-
-        const rank = getRank(user.points);
-        const userInfoList = document.getElementById('user-info-list');
-        userInfoList.innerHTML = `
-            <li><span class="label">Nom complet :</span><span class="value">${user.firstName} ${user.lastName}</span></li>
-            <li><span class="label">Points d’amitié :</span><span class="value">${user.points}</span></li>
-            <li><span class="label">Rang :</span><span class="value">${rank}</span></li>
-            <li><span class="label">Date de naissance :</span><span class="value">${user.dateOfBirth || 'Non renseignée'}</span></li>
-            <li><span class="label">Adresse :</span><span class="value">${user.address || 'Non renseignée'}</span></li>
-            <li><span class="label">Numéro de téléphone :</span><span class="value">${user.phoneNumber || 'Non renseigné'}</span></li>
-        `;
-    }
-
-    // Gère la connexion
-    function accessFriendshipFile() {
-        const inputFirstName = document.getElementById('input-first-name').value.trim();
-        const inputLastName = document.getElementById('input-last-name').value.trim();
-        const inputPassword = document.getElementById('input-password').value.trim();
-        const loginError = document.getElementById('login-error');
-
-        loginError.textContent = '';
-
-        if (!inputFirstName || !inputLastName || !inputPassword) {
-            loginError.textContent = 'Veuillez remplir tous les champs.';
-            return;
-        }
-
-        const foundUser = usersData.find(user =>
-            user.firstName.toLowerCase() === inputFirstName.toLowerCase() &&
-            user.lastName.toLowerCase() === inputLastName.toLowerCase() &&
-            user.password === inputPassword
-        );
-
-        if (foundUser) {
-            localStorage.setItem('currentUser', JSON.stringify(foundUser));
-            displayFriendshipFile(foundUser);
-        } else {
-            loginError.textContent = 'Informations de connexion incorrectes.';
-        }
-    }
-
-    // Gère la déconnexion
-    function logout() {
-        localStorage.removeItem('currentUser');
-        location.reload(); // Recharge la page pour revenir à l'écran de connexion
-    }
-
-    // Vérifie au chargement de la page si un utilisateur est déjà connecté
-    window.onload = function() {
-        const currentUser = localStorage.getItem('currentUser');
-        if (currentUser) {
-            const user = JSON.parse(currentUser);
-            displayFriendshipFile(user);
-        }
-    };
-</script>
-
+<script src="data.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
