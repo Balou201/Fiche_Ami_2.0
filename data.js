@@ -24,7 +24,7 @@ const usersData = [
         firstName: 'Ines',
         lastName: 'Lahouazi',
         password: 'Inesjade2012?', // Mot de passe original, à remplacer par le vrai si différent
-        points: 72,
+        points: 32,
         dateOfBirth: '21 mars 2012',
         address: 'Inconnue',
         phoneNumber: '06 66 91 14 01'
