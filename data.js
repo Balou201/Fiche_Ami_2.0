@@ -39,7 +39,7 @@ const usersData = [
         firstName: 'Victory-Anna',
         lastName: 'Da Costa',
         password: 'G14nn1LEGOAT',
-        points: 69,
+        points: 84,
         dateOfBirth: '4 mars 2012',
         address: 'Inconnue',
         phoneNumber: '07 66 60 24 60'
@@ -102,7 +102,7 @@ const usersData = [
         firstName: 'Marilou',
         lastName: 'Longuèvre',
         password: '1234',
-        points: 83,
+        points: 73,
         dateOfBirth: '19 Aout 2009',
         address: 'Inconnue',
         phoneNumber: '06 18 42 52 80'
