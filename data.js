@@ -18,15 +18,6 @@ const usersData = [
         phoneNumber: 'Inconnu'
     },
     {
-        firstName: 'Ines',
-        lastName: 'Lahouazi',
-        password: 'Inesjade2012?',
-        points: 32,
-        dateOfBirth: '21 mars 2012',
-        address: 'Inconnue',
-        phoneNumber: '06 66 91 14 01'
-    },
-    {
         firstName: 'Gabin',
         lastName: 'Lefevre',
         password: 'PuLsViTe55',
