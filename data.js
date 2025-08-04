@@ -1,18 +1,15 @@
-// --- SECTION À MODIFIER DIRECTEMENT POUR DÉFINIR LES FICHES ---
-// Chaque objet dans ce tableau représente une fiche d'amitié.
-// MODIFIEZ CE TABLEAU pour ajouter, retirer ou modifier des personnes et leurs points.
 const usersData = [
     {
         firstName: 'Sybille',
         lastName: 'Vignal',
-        password: 'Boubourette11@', // Mot de passe original, à remplacer par le vrai si différent
+        password: 'Boubourette11@',
         points: 177,
         dateOfBirth: '13 décembre 2011 à 8h00',
         address: '13 Rue de la République a Magenta (51530)',
         phoneNumber: '07 44 71 72 18'
     },
     {
-        firstName: 'Gianni', // Informations de Gianni conservées de la version précédente car non fournies ici
+        firstName: 'Gianni',
         lastName: 'Blaz',
         password: 'Exp22',
         points: 999,
@@ -23,7 +20,7 @@ const usersData = [
     {
         firstName: 'Ines',
         lastName: 'Lahouazi',
-        password: 'Inesjade2012?', // Mot de passe original, à remplacer par le vrai si différent
+        password: 'Inesjade2012?',
         points: 32,
         dateOfBirth: '21 mars 2012',
         address: 'Inconnue',
@@ -32,7 +29,7 @@ const usersData = [
     {
         firstName: 'Gabin',
         lastName: 'Lefevre',
-        password: 'PuLsViTe55', // Mot de passe original, à remplacer par le vrai si différent
+        password: 'PuLsViTe55',
         points: 112,
         dateOfBirth: '04 avril 2012',
         address: 'Inconnue',
@@ -41,7 +38,7 @@ const usersData = [
     {
         firstName: 'Victory-Anna',
         lastName: 'Da Costa',
-        password: 'G14nn1LEGOAT', // Mot de passe original, à remplacer par le vrai si différent
+        password: 'G14nn1LEGOAT',
         points: 69,
         dateOfBirth: '4 mars 2012',
         address: 'Inconnue',
@@ -50,7 +47,7 @@ const usersData = [
     {
         firstName: 'Joël',
         lastName: 'Lagadec',
-        password: 'XXX2025/2026', // Mot de passe original, à remplacer par le vrai si différent
+        password: 'XXX2025/2026',
         points: 75,
         dateOfBirth: '10 avril 2012',
         address: 'Inconnue',
@@ -59,7 +56,7 @@ const usersData = [
     {
         firstName: 'Louise',
         lastName: 'Lebadi',
-        password: 'Giannietlouise', // Mot de passe original, à remplacer par le vrai si différent
+        password: 'Giannietlouise',
         points: 171,
         dateOfBirth: '13 mars 2012',
         address: '148 avenue Gabriel Péri. (94 170) Le Perreux',
@@ -68,7 +65,7 @@ const usersData = [
     {
         firstName: 'Taylor',
         lastName: 'Dejussel',
-        password: 'Grizouthegoats', // Mot de passe original, à remplacer par le vrai si différent
+        password: 'Grizouthegoats',
         points: 121,
         dateOfBirth: '5 juillet 2012',
         address: 'Inconnue',
@@ -77,7 +74,7 @@ const usersData = [
     {
         firstName: 'Leda',
         lastName: 'Tiste',
-        password: '!ticket', // Mot de passe original, à remplacer par le vrai si différent
+        password: '!ticket',
         points: 90,
         dateOfBirth: '7 juillet 2010',
         address: 'Inconnue',
@@ -86,7 +83,7 @@ const usersData = [
     {
         firstName: 'Denisa',
         lastName: 'Gherasim',
-        password: 'Denisa142012_94.', // Mot de passe original, à remplacer par le vrai si différent
+        password: 'Denisa142012_94.',
         points: 40,
         dateOfBirth: '14 mars 2012',
         address: 'Inconnue',
@@ -95,7 +92,7 @@ const usersData = [
     {
         firstName: 'Ethan',
         lastName: 'Beranger',
-        password: 'FireBird30&', // Mot de passe original, à remplacer par le vrai si différent
+        password: 'FireBird30&',
         points: 130,
         dateOfBirth: '4 février 2011',
         address: 'Inconnue',
@@ -104,7 +101,7 @@ const usersData = [
     {
         firstName: 'Marilou',
         lastName: 'Longuèvre',
-        password: '1234', // Mot de passe original, à remplacer par le vrai si différent
+        password: '1234',
         points: 83,
         dateOfBirth: '19 Aout 2009',
         address: 'Inconnue',
@@ -113,7 +110,7 @@ const usersData = [
     {
         firstName: 'Hugo',
         lastName: 'Hejelouis',
-        password: 'Pell!883::%9,_*', // Mot de passe original, à remplacer par le vrai si différent
+        password: 'Pell!883::%9,_*',
         points: 180,
         dateOfBirth: '3 septembre 2012',
         address: 'Inconnue',
