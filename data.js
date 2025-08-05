@@ -95,7 +95,7 @@ const usersData = [
         password: '1234',
         points: 73,
         dateOfBirth: '19 Aout 2009',
-        address: 'Inconnue',
+        address: '10 petite rue Ligny le chatel',
         phoneNumber: '06 18 42 52 80'
     },
     {
