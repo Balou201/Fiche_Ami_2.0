@@ -1,0 +1,255 @@
+/* Styles généraux */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Conteneur principal */
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 550px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Conteneur de la fiche de résultat */
+.result-container {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+/* Conteneur de l'admin */
+.admin-container {
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.admin-container h2 {
+    color: #1a73e8;
+}
+
+h1 {
+    color: #1e3a8a;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 2.2em;
+}
+
+h2 {
+    color: #1e3a8a;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    margin-top: 15px;
+    color: #555;
+    font-weight: 400;
+    font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #dcdfe6;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    outline: none;
+}
+
+button {
+    background-color: #4f46e5;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #3e38a8;
+    transform: translateY(-2px);
+}
+
+#logout-button {
+    background-color: #ef4444;
+    margin-top: 15px;
+}
+
+#logout-button:hover {
+    background-color: #dc2626;
+}
+
+/* Messages d'erreur */
+#login-error {
+    color: #ef4444;
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+/* Liste des informations */
+.info-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.info-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e0e0e0;
+    font-size: 1.05em;
+}
+
+.info-list li.sanction-warning {
+    color: #d97706;
+    font-weight: 600;
+    background-color: #fffbeb;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #fcd34d;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-list .label {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.info-list .value {
+    color: #4b5563;
+    text-align: right;
+}
+
+/* Styles pour la liste de classement */
+.ranking-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ranking-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1em;
+}
+.ranking-list li .ranking-item-content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.ranking-list li:last-child {
+    border-bottom: none;
+}
+
+.ranking-list .rank {
+    font-weight: 600;
+    color: #1e3a8a;
+    width: 30px;
+    text-align: left;
+}
+
+.ranking-list .name {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.ranking-list .points {
+    font-weight: 600;
+    color: #4f46e5;
+    width: 60px;
+    text-align: right;
+    margin-right: 15px;
+}
+
+.ranking-list .rank-name {
+    font-size: 0.9em;
+    color: #6b7280;
+    text-align: right;
+    width: 120px;
+}
+
+.ranking-list li button {
+    width: auto;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+    .container {
+        padding: 30px 20px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    .ranking-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .ranking-list li .ranking-item-content {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .ranking-list .rank, .ranking-list .name, .ranking-list .points, .ranking-list .rank-name {
+        text-align: left;
+        width: auto;
+    }
+    .ranking-list .points {
+        margin-right: 0;
+    }
+}
