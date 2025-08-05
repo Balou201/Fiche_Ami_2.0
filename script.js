@@ -16,7 +16,7 @@ function getRank(points) {
 
 function getSanctionWarning(points) {
     if (points < 50) {
-        return `⚠️ Attention, si tes points restent trop longtemps en dessous de 50 ou que tu descends encore d'un rang, tu risques une sanction !`;
+        return `⚠️ Attention : Si tes points restent trop longtemps en dessous de 50 ou que tu perds un rang, une sanction peut être appliquée !`;
     }
     return '';
 }
@@ -26,11 +26,9 @@ function displayFriendshipFile(user) {
     const userInfoList = document.getElementById('user-info-list');
     userInfoList.innerHTML = '';
 
-    // Trier le classement pour trouver la position
     const sortedUsers = [...usersData].sort((a, b) => b.points - a.points);
     const userRank = sortedUsers.findIndex(u => u.firstName === user.firstName && u.lastName === user.lastName) + 1;
 
-    // Ajouter un avertissement de sanction si nécessaire
     const sanctionMessage = getSanctionWarning(user.points);
     if (sanctionMessage) {
         const warningItem = document.createElement('li');
@@ -39,7 +37,6 @@ function displayFriendshipFile(user) {
         userInfoList.appendChild(warningItem);
     }
 
-    // Ajouter les informations de l'utilisateur
     userInfoList.innerHTML += `
         <li><span class="label">Nom complet :</span><span class="value">${user.firstName} ${user.lastName}</span></li>
         <li><span class="label">Points d’amitié :</span><span class="value">${user.points}</span></li>
@@ -61,16 +58,18 @@ function displayAdminRanking() {
     const adminRankingList = document.getElementById('admin-ranking-list');
     adminRankingList.innerHTML = '';
 
-    // Trier les utilisateurs par points de manière décroissante
     const sortedUsers = [...usersData].sort((a, b) => b.points - a.points);
 
     sortedUsers.forEach((user, index) => {
         const rankItem = document.createElement('li');
         rankItem.innerHTML = `
-            <span class="rank">${index + 1}.</span>
-            <span class="name">${user.firstName} ${user.lastName}</span>
-            <span class="points">${user.points} pts</span>
-            <span class="rank-name">${getRank(user.points)}</span>
+            <div class="ranking-item-content">
+                <span class="rank">${index + 1}.</span>
+                <span class="name">${user.firstName} ${user.lastName}</span>
+                <span class="points">${user.points} pts</span>
+                <span class="rank-name">${getRank(user.points)}</span>
+            </div>
+            <button onclick="directLogin('${user.firstName}', '${user.lastName}')">Se connecter</button>
         `;
         adminRankingList.appendChild(rankItem);
     });
@@ -80,6 +79,19 @@ function displayAdminRanking() {
     document.getElementById('admin-result-section').style.display = 'block';
     document.getElementById('main-title').textContent = `Bonjour, Gianni! (Admin)`;
 }
+
+// Gère la connexion directe depuis l'admin
+function directLogin(firstName, lastName) {
+    const userToLogin = usersData.find(user =>
+        user.firstName === firstName && user.lastName === lastName
+    );
+
+    if (userToLogin) {
+        localStorage.setItem('currentUser', JSON.stringify(userToLogin));
+        displayFriendshipFile(userToLogin);
+    }
+}
+
 
 // Gère la connexion
 function accessFriendshipFile() {
@@ -103,7 +115,6 @@ function accessFriendshipFile() {
 
     if (foundUser) {
         localStorage.setItem('currentUser', JSON.stringify(foundUser));
-        // Vérifier si c'est l'administrateur
         if (foundUser.firstName.toLowerCase() === 'gianni' && foundUser.lastName.toLowerCase() === 'blaz') {
             displayAdminRanking();
         } else {
@@ -125,7 +136,6 @@ window.onload = function() {
     const currentUser = localStorage.getItem('currentUser');
     if (currentUser) {
         const user = JSON.parse(currentUser);
-        // Vérifier si c'est l'administrateur
         if (user.firstName.toLowerCase() === 'gianni' && user.lastName.toLowerCase() === 'blaz') {
             displayAdminRanking();
         } else {
