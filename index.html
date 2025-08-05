@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fiche Amitié - Accès Sécurisé</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiche Amitié - Accès Sécurisé</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Feuille de style -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
-<div class="container">
+  <div class="container">
     <h1 id="main-title">Accès à votre Fiche Amitié</h1>
 
     <section id="user-login-section">
-        <label for="input-first-name">Votre Prénom :</label>
-        <input type="text" id="input-first-name" placeholder="Ex: Jean" />
+      <label for="input-first-name">Votre Prénom :</label>
+      <input type="text" id="input-first-name" placeholder="Ex: Jean" />
 
-        <label for="input-last-name">Votre Nom :</label>
-        <input type="text" id="input-last-name" placeholder="Ex: Dupont" />
+      <label for="input-last-name">Votre Nom :</label>
+      <input type="text" id="input-last-name" placeholder="Ex: Dupont" />
 
-        <label for="input-password">Votre Mot de passe :</label>
-        <input type="password" id="input-password" />
+      <label for="input-password">Votre Mot de passe :</label>
+      <input type="password" id="input-password" />
 
-        <button onclick="accessFriendshipFile()">Accéder à ma fiche</button>
+      <button onclick="accessFriendshipFile()">Accéder à ma fiche</button>
 
-        <p id="login-error"></p>
+      <p id="login-error"></p>
     </section>
 
     <section id="user-result-section" style="display: none;">
-        <div class="result-container">
-            <h2 id="result-title">Votre Fiche d'Amitié</h2>
-            <ul class="info-list" id="user-info-list"></ul>
-        </div>
-        <button id="logout-button" onclick="logout()">Se déconnecter</button>
+      <div class="result-container">
+        <h2 id="result-title">Votre Fiche d'Amitié</h2>
+        <ul class="info-list" id="user-info-list"></ul>
+      </div>
+      <button id="logout-button" onclick="logout()">Se déconnecter</button>
     </section>
 
     <section id="admin-result-section" style="display: none;">
-        <div class="admin-container">
-            <h2>Classement des Amis (Accès Admin)</h2>
-            <ul class="ranking-list" id="admin-ranking-list"></ul>
-        </div>
-        <button id="logout-button-admin" onclick="logout()">Se déconnecter</button>
+      <div class="admin-container">
+        <h2>Classement des Amis (Accès Admin)</h2>
+        <ul class="ranking-list" id="admin-ranking-list"></ul>
+      </div>
+      <button id="logout-button-admin" onclick="logout()">Se déconnecter</button>
     </section>
-</div>
-<script src="data.js"></script>
-<script src="script.js"></script>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
