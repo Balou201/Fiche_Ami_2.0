@@ -107,4 +107,13 @@ const usersData = [
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
+    {
+        firstName: 'Simon',
+        lastName: 'Monnet',
+        password: 'simsim36785_',
+        points: 18,
+        dateOfBirth: '24 décembre 2011',
+        address: 'Inconnue',
+        phoneNumber: 'Inconnue'
+    },
 ];
