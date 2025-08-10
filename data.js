@@ -3,7 +3,7 @@ const usersData = [
         firstName: 'Sybille',
         lastName: 'Vignal',
         password: 'Boubourette11@',
-        points: 178,
+        points: 181,
         dateOfBirth: '13 décembre 2011 à 8h00',
         address: '13 Rue de la République a Magenta (51530)',
         phoneNumber: '07 44 71 72 18'
@@ -84,7 +84,7 @@ const usersData = [
         firstName: 'Ethan',
         lastName: 'Beranger',
         password: 'FireBird30&',
-        points: 130,
+        points: 135,
         dateOfBirth: '4 février 2011',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
@@ -102,7 +102,7 @@ const usersData = [
         firstName: 'Hugo',
         lastName: 'Hejelouis',
         password: 'Pell!883::%9,_*',
-        points: 180,
+        points: 183,
         dateOfBirth: '3 septembre 2012',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
@@ -111,7 +111,7 @@ const usersData = [
         firstName: 'Simon',
         lastName: 'Monnet',
         password: 'simsim36785_',
-        points: 34,
+        points: 40,
         dateOfBirth: '24 décembre 2011',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
