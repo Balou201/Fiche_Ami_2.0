@@ -3,7 +3,7 @@ const usersData = [
         firstName: 'Sybille',
         lastName: 'Vignal',
         password: 'Boubourette11@',
-        points: 181,
+        points: 182,
         dateOfBirth: '13 décembre 2011 à 8h00',
         address: '13 Rue de la République a Magenta (51530)',
         phoneNumber: '07 44 71 72 18'
@@ -21,7 +21,7 @@ const usersData = [
         firstName: 'Gabin',
         lastName: 'Lefevre',
         password: 'PuLsViTe55',
-        points: 112,
+        points: 113,
         dateOfBirth: '04 avril 2012',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
@@ -30,7 +30,7 @@ const usersData = [
         firstName: 'Victory-Anna',
         lastName: 'Da Costa',
         password: 'G14nn1LEGOAT',
-        points: 84,
+        points: 95,
         dateOfBirth: '4 mars 2012',
         address: 'Inconnue',
         phoneNumber: '07 66 60 24 60'
@@ -48,7 +48,7 @@ const usersData = [
         firstName: 'Louise',
         lastName: 'Lebadi',
         password: 'Giannietlouise',
-        points: 171,
+        points: 174,
         dateOfBirth: '13 mars 2012',
         address: '148 avenue Gabriel Péri. (94 170) Le Perreux',
         phoneNumber: '07 49 52 38 30'
@@ -57,7 +57,7 @@ const usersData = [
         firstName: 'Taylor',
         lastName: 'Dejussel',
         password: 'Grizouthegoats',
-        points: 121,
+        points: 122,
         dateOfBirth: '5 juillet 2012',
         address: 'Inconnue',
         phoneNumber: '07 49 52 38 30'
@@ -66,7 +66,7 @@ const usersData = [
         firstName: 'Leda',
         lastName: 'Tiste',
         password: '!ticket',
-        points: 90,
+        points: 91,
         dateOfBirth: '7 juillet 2010',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
@@ -111,7 +111,7 @@ const usersData = [
         firstName: 'Simon',
         lastName: 'Monnet',
         password: 'simsim36785_',
-        points: 40,
+        points: 41,
         dateOfBirth: '24 décembre 2011',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
