@@ -30,7 +30,7 @@ const usersData = [
         firstName: 'Victory-Anna',
         lastName: 'Da Costa',
         password: 'G14nn1LEGOAT',
-        points: 95,
+        points: 98,
         dateOfBirth: '4 mars 2012',
         address: 'Inconnue',
         phoneNumber: '07 66 60 24 60'
@@ -48,7 +48,7 @@ const usersData = [
         firstName: 'Louise',
         lastName: 'Lebadi',
         password: 'Giannietlouise',
-        points: 174,
+        points: 176,
         dateOfBirth: '13 mars 2012',
         address: '148 avenue Gabriel Péri. (94 170) Le Perreux',
         phoneNumber: '07 49 52 38 30'
@@ -111,7 +111,7 @@ const usersData = [
         firstName: 'Simon',
         lastName: 'Monnet',
         password: 'simsim36785_',
-        points: 41,
+        points: 43,
         dateOfBirth: '24 décembre 2011',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
