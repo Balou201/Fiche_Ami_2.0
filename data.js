@@ -3,7 +3,7 @@ const usersData = [
         firstName: 'Sybille',
         lastName: 'Vignal',
         password: 'Boubourette11@',
-        points: 184,
+        points: 187,
         dateOfBirth: '13 décembre 2011 à 8h00',
         address: '13 Rue de la République a Magenta (51530)',
         phoneNumber: '07 44 71 72 18'
