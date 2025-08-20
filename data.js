@@ -111,7 +111,7 @@ const usersData = [
         firstName: 'Simon',
         lastName: 'Monnet',
         password: 'simsim36785_',
-        points: 49,
+        points: 60,
         dateOfBirth: '24 décembre 2011',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
