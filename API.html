@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sync Data</title>
+</head>
+<body>
+  <h1>Données chiffrées</h1>
+  <pre id="data"></pre>
+
+  <script type="module">
+    import dataEnc from './data.enc.js';
+    document.getElementById("data").textContent = JSON.stringify(dataEnc, null, 2);
+  </script>
+</body>
+</html>
