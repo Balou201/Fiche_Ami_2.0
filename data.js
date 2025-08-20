@@ -21,7 +21,7 @@ const usersData = [
         firstName: 'Gabin',
         lastName: 'Lefevre',
         password: 'PuLsViTe55',
-        points: 113,
+        points: 90,
         dateOfBirth: '04 avril 2012',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
