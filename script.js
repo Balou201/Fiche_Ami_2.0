@@ -21,9 +21,27 @@ function getSanctionWarning(points) {
     return '';
 }
 
+function checkBirthday(user) {
+    const today = new Date();
+    const currentMonthDay = `${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    return user.birthday === currentMonthDay;
+}
+
 // Affiche la fiche de l'utilisateur
 function displayFriendshipFile(user) {
     const userInfoList = document.getElementById('user-info-list');
+    const mainTitle = document.getElementById('main-title');
+    const isBirthday = checkBirthday(user);
+    
+    // Ajoute la classe 'birthday-mode' au body si c'est l'anniversaire
+    if (isBirthday) {
+        document.body.classList.add('birthday-mode');
+        mainTitle.innerHTML = `Joyeux Anniversaire, ${user.firstName}! 🎉🎂`;
+    } else {
+        document.body.classList.remove('birthday-mode');
+        mainTitle.textContent = `Bonjour, ${user.firstName}!`;
+    }
+
     userInfoList.innerHTML = '';
 
     const sortedUsers = [...usersData].sort((a, b) => b.points - a.points);
@@ -50,13 +68,13 @@ function displayFriendshipFile(user) {
     document.getElementById('user-login-section').style.display = 'none';
     document.getElementById('admin-result-section').style.display = 'none';
     document.getElementById('user-result-section').style.display = 'block';
-    document.getElementById('main-title').textContent = `Bonjour, ${user.firstName}!`;
 }
 
 // Affiche la vue administrateur
 function displayAdminRanking() {
     const adminRankingList = document.getElementById('admin-ranking-list');
     adminRankingList.innerHTML = '';
+    document.body.classList.remove('birthday-mode'); // S'assure de retirer le mode anniversaire pour l'admin
 
     const sortedUsers = [...usersData].sort((a, b) => b.points - a.points);
 
