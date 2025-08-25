@@ -129,5 +129,15 @@ const usersData = [
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
+    {
+        firstName: 'Test',
+        lastName: 'X',
+        password: 'Go',
+        points: 0,
+        dateOfBirth: '24 décembre 2011',
+        birthday: '8-25',
+        address: 'Inconnue',
+        phoneNumber: 'Inconnue'
+    },
 ];
 
