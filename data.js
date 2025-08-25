@@ -130,12 +130,12 @@ const usersData = [
         phoneNumber: 'Inconnue'
     },
     {
-        firstName: 'Test',
-        lastName: 'X',
-        password: 'Go',
-        points: 0,
-        dateOfBirth: '24 décembre 2011',
-        birthday: '8-25',
+        firstName: 'Mahiti',
+        lastName: 'Payet',
+        password: 'Error404',
+        points: 70,
+        dateOfBirth: '21 août 2015',
+        birthday: '8-21',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
