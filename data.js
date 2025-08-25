@@ -5,6 +5,7 @@ const usersData = [
         password: 'Boubourette11@',
         points: 187,
         dateOfBirth: '13 décembre 2011 à 8h00',
+        birthday: '12-13',
         address: '13 Rue de la République a Magenta (51530)',
         phoneNumber: '07 44 71 72 18'
     },
@@ -14,6 +15,7 @@ const usersData = [
         password: 'Exp22',
         points: 0,
         dateOfBirth: 'Inconnue',
+        birthday: '01-01', // Date de naissance par défaut pour la démo
         address: 'Inconnue',
         phoneNumber: 'Inconnu'
     },
@@ -23,6 +25,7 @@ const usersData = [
         password: 'PuLsViTe55',
         points: 90,
         dateOfBirth: '04 avril 2012',
+        birthday: '04-04',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
@@ -32,6 +35,7 @@ const usersData = [
         password: 'G14nn1LEGOAT',
         points: 99,
         dateOfBirth: '4 mars 2012',
+        birthday: '03-04',
         address: 'Inconnue',
         phoneNumber: '07 66 60 24 60'
     },
@@ -41,6 +45,7 @@ const usersData = [
         password: 'XXX2025/2026',
         points: 77,
         dateOfBirth: '10 avril 2012',
+        birthday: '04-10',
         address: 'Inconnue',
         phoneNumber: '07 75 74 14 36'
     },
@@ -50,6 +55,7 @@ const usersData = [
         password: 'Giannietlouise',
         points: 176,
         dateOfBirth: '13 mars 2012',
+        birthday: '03-13',
         address: '148 avenue Gabriel Péri. (94 170) Le Perreux',
         phoneNumber: '07 49 52 38 30'
     },
@@ -59,6 +65,7 @@ const usersData = [
         password: 'Grizouthegoats',
         points: 122,
         dateOfBirth: '5 juillet 2012',
+        birthday: '07-05',
         address: 'Inconnue',
         phoneNumber: '07 49 52 38 30'
     },
@@ -68,6 +75,7 @@ const usersData = [
         password: '!ticket',
         points: 91,
         dateOfBirth: '7 juillet 2010',
+        birthday: '07-07',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
@@ -77,6 +85,7 @@ const usersData = [
         password: 'Denisa142012_94.',
         points: 41,
         dateOfBirth: '14 mars 2012',
+        birthday: '03-14',
         address: 'Inconnue',
         phoneNumber: '07 83 76 64 01'
     },
@@ -86,6 +95,7 @@ const usersData = [
         password: 'FireBird30&',
         points: 135,
         dateOfBirth: '4 février 2011',
+        birthday: '02-04',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
@@ -95,6 +105,7 @@ const usersData = [
         password: '1234',
         points: 75,
         dateOfBirth: '19 Aout 2009',
+        birthday: '08-19',
         address: '10 petite rue Ligny le chatel',
         phoneNumber: '06 18 42 52 80'
     },
@@ -104,6 +115,7 @@ const usersData = [
         password: 'Pell!883::%9,_*',
         points: 185,
         dateOfBirth: '3 septembre 2012',
+        birthday: '09-03',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
@@ -113,6 +125,7 @@ const usersData = [
         password: 'simsim36785_',
         points: 60,
         dateOfBirth: '24 décembre 2011',
+        birthday: '12-24',
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
