@@ -113,7 +113,7 @@ const usersData = [
         firstName: 'Hugo',
         lastName: 'Hejelouis',
         password: 'Pell!883::%9,_*',
-        points: 132,
+        points: 102,
         dateOfBirth: '3 septembre 2012',
         birthday: '09-03',
         address: 'Inconnue',
