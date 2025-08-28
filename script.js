@@ -22,9 +22,22 @@ function getSanctionWarning(points) {
 }
 
 function checkBirthday(user) {
+    if (user.dateOfBirth === 'Inconnue') {
+        return false;
+    }
     const today = new Date();
-    const currentMonthDay = `${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-    return user.birthday === currentMonthDay;
+    const currentMonth = today.getMonth() + 1;
+    const currentDay = today.getDate();
+
+    const monthNames = ["janvier", "février", "mars", "avril", "mai", "juin",
+        "juillet", "août", "septembre", "octobre", "novembre", "décembre"
+    ];
+
+    const dateParts = user.dateOfBirth.toLowerCase().split(' ');
+    const userDay = parseInt(dateParts[0]);
+    const userMonth = monthNames.indexOf(dateParts[1]) + 1;
+
+    return userDay === currentDay && userMonth === currentMonth;
 }
 
 // Affiche la fiche de l'utilisateur
@@ -55,12 +68,17 @@ function displayFriendshipFile(user) {
         userInfoList.appendChild(warningItem);
     }
 
+    const crosses = '❌'.repeat(user.numberOfCrosses || 0);
+
     userInfoList.innerHTML += `
         <li><span class="label">Nom complet :</span><span class="value">${user.firstName} ${user.lastName}</span></li>
         <li><span class="label">Points d’amitié :</span><span class="value">${user.points}</span></li>
         <li><span class="label">Rang :</span><span class="value">${getRank(user.points)}</span></li>
         <li><span class="label">Votre place :</span><span class="value">${userRank} / ${usersData.length}</span></li>
         <li><span class="label">Date de naissance :</span><span class="value">${user.dateOfBirth || 'Non renseignée'}</span></li>
+        <li><span class="label">Relation amoureuse :</span><span class="value">${user.loveLife || 'Non renseignée'}</span></li>
+        <li><span class="label">Nombre de croix :</span><span class="value">${crosses}</span></li>
+        <li><span class="label">Notes :</span><span class="value">${user.notes || 'Aucune note'}</span></li>
         <li><span class="label">Adresse :</span><span class="value">${user.address || 'Non renseignée'}</span></li>
         <li><span class="label">Numéro de téléphone :</span><span class="value">${user.phoneNumber || 'Non renseigné'}</span></li>
     `;
@@ -161,4 +179,3 @@ window.onload = function() {
         }
     }
 };
-
