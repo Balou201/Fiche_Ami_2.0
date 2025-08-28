@@ -5,7 +5,9 @@ const usersData = [
         password: 'Boubourette11@',
         points: 185,
         dateOfBirth: '13 décembre 2011 à 8h00',
-        birthday: '12-13',
+        notes: 'Aime le chocolat.',
+        loveLife: 'Célibataire',
+        numberOfCrosses: 0,
         address: '13 Rue de la République a Magenta (51530)',
         phoneNumber: '07 44 71 72 18'
     },
@@ -15,7 +17,9 @@ const usersData = [
         password: 'Exp22',
         points: 0,
         dateOfBirth: 'Inconnue',
-        birthday: '01-01', // Date de naissance par défaut pour la démo
+        notes: 'Administrateur du site.',
+        loveLife: 'En couple',
+        numberOfCrosses: 0,
         address: 'Inconnue',
         phoneNumber: 'Inconnu'
     },
@@ -25,7 +29,9 @@ const usersData = [
         password: 'PuLsViTe55',
         points: 75,
         dateOfBirth: '04 avril 2012',
-        birthday: '04-04',
+        notes: 'Très serviable.',
+        loveLife: 'Célibataire',
+        numberOfCrosses: 1,
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
@@ -35,7 +41,9 @@ const usersData = [
         password: 'G14nn1LEGOAT',
         points: 100,
         dateOfBirth: '4 mars 2012',
-        birthday: '03-04',
+        notes: 'Aime les jeux vidéos.',
+        loveLife: 'Célibataire',
+        numberOfCrosses: 2,
         address: 'Inconnue',
         phoneNumber: '07 66 60 24 60'
     },
@@ -45,7 +53,9 @@ const usersData = [
         password: 'XXX2025/2026',
         points: 77,
         dateOfBirth: '10 avril 2012',
-        birthday: '04-10',
+        notes: 'Aime les animaux.',
+        loveLife: 'En couple',
+        numberOfCrosses: 0,
         address: 'Inconnue',
         phoneNumber: '07 75 74 14 36'
     },
@@ -55,7 +65,9 @@ const usersData = [
         password: 'Giannietlouise',
         points: 175,
         dateOfBirth: '13 mars 2012',
-        birthday: '03-13',
+        notes: 'Adore les balades en forêt.',
+        loveLife: 'En couple',
+        numberOfCrosses: 0,
         address: '148 avenue Gabriel Péri. (94 170) Le Perreux',
         phoneNumber: '07 49 52 38 30'
     },
@@ -65,7 +77,9 @@ const usersData = [
         password: 'Grizouthegoats',
         points: 122,
         dateOfBirth: '5 juillet 2012',
-        birthday: '07-05',
+        notes: 'Aime le sport.',
+        loveLife: 'Célibataire',
+        numberOfCrosses: 0,
         address: 'Inconnue',
         phoneNumber: '07 49 52 38 30'
     },
@@ -75,7 +89,9 @@ const usersData = [
         password: '!ticket',
         points: 92,
         dateOfBirth: '7 juillet 2010',
-        birthday: '07-07',
+        notes: 'Passionnée de musique.',
+        loveLife: 'En couple',
+        numberOfCrosses: 0,
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
@@ -85,7 +101,9 @@ const usersData = [
         password: 'Denisa142012_94.',
         points: 53,
         dateOfBirth: '14 mars 2012',
-        birthday: '03-14',
+        notes: 'Aime voyager.',
+        loveLife: 'Célibataire',
+        numberOfCrosses: 0,
         address: 'Inconnue',
         phoneNumber: '07 83 76 64 01'
     },
@@ -95,7 +113,9 @@ const usersData = [
         password: 'FireBird30&',
         points: 135,
         dateOfBirth: '4 février 2011',
-        birthday: '02-04',
+        notes: 'Très bon en maths.',
+        loveLife: 'Célibataire',
+        numberOfCrosses: 0,
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
@@ -105,7 +125,9 @@ const usersData = [
         password: '1234',
         points: 75,
         dateOfBirth: '19 Aout 2009',
-        birthday: '08-19',
+        notes: 'Aime la lecture.',
+        loveLife: 'En couple',
+        numberOfCrosses: 0,
         address: '10 petite rue Ligny le chatel',
         phoneNumber: '06 18 42 52 80'
     },
@@ -115,7 +137,9 @@ const usersData = [
         password: 'Pell!883::%9,_*',
         points: 0,
         dateOfBirth: '3 septembre 2012',
-        birthday: '09-03',
+        notes: 'Aime dessiner.',
+        loveLife: 'Célibataire',
+        numberOfCrosses: 0,
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
@@ -125,7 +149,9 @@ const usersData = [
         password: 'simsim36785_',
         points: 75,
         dateOfBirth: '24 décembre 2011',
-        birthday: '12-24',
+        notes: 'Collectionne les timbres.',
+        loveLife: 'Célibataire',
+        numberOfCrosses: 0,
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
@@ -135,9 +161,10 @@ const usersData = [
         password: 'Error404',
         points: 55,
         dateOfBirth: '21 août 2015',
-        birthday: '8-21',
+        notes: 'Nouvelle amie.',
+        loveLife: 'Célibataire',
+        numberOfCrosses: 0,
         address: 'Inconnue',
         phoneNumber: 'Inconnue'
     },
 ];
-
