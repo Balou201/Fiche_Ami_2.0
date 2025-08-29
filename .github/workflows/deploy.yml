@@ -2,7 +2,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      USER1_PASSWORD: ${{ secrets.USER1_PASSWORD }}
+      USER1_PASSWORD: ${{ secrets.ADMIN_PASS }}
       USER1_PHONE: ${{ secrets.USER1_PHONE }}
     steps:
       - uses: actions/checkout@v4
