@@ -33,7 +33,7 @@ const usersData = [
         loveLife: 'Célibataire',
         numberOfCrosses: 1,
         address: 'Inconnue',
-        phoneNumber: '0652048718'
+        phoneNumber: '06 52 04 87 18'
     },
     {
         firstName: 'Victory-Anna',
