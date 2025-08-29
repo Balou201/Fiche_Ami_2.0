@@ -15,7 +15,7 @@ const usersData = [
         firstName: 'Gianni',
         lastName: 'Blaz',
         password: process.env.ADMIN_PASS,
-        points: -1,
+        points: 0,
         dateOfBirth: 'Censure',
         notes: 'Administrateur du site.',
         loveLife: 'Censure',
