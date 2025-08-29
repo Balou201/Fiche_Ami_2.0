@@ -1,17 +1,9 @@
-name: Deploy API
-
-on:
-  push:
-    branches: ["main"]
-
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
       USER1_PASSWORD: ${{ secrets.USER1_PASSWORD }}
       USER1_PHONE: ${{ secrets.USER1_PHONE }}
-      USER2_PASSWORD: ${{ secrets.USER2_PASSWORD }}
-      USER2_PHONE: ${{ secrets.USER2_PHONE }}
     steps:
       - uses: actions/checkout@v4
 
@@ -19,9 +11,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-
-      - name: Install dependencies
-        run: npm install
 
       - name: Run app
         run: node index.js
