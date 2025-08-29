@@ -15,13 +15,13 @@ const usersData = [
         firstName: 'Gianni',
         lastName: 'Blaz',
         password: process.env.ADMIN_PASS,
-        points: 0,
-        dateOfBirth: 'Inconnue',
+        points: -1,
+        dateOfBirth: 'Censure',
         notes: 'Administrateur du site.',
-        loveLife: 'Inconnue',
+        loveLife: 'Censure',
         numberOfCrosses: 0,
-        address: 'Inconnue',
-        phoneNumber: 'Inconnu'
+        address: 'Censure',
+        phoneNumber: 'Censure'
     },
     {
         firstName: 'Gabin',
