@@ -5,13 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fiche Amitié - Accès Sécurisé</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Feuille de style -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
@@ -20,11 +17,8 @@
     <h1 id="main-title">Accès à votre Fiche Amitié</h1>
 
     <section id="user-login-section">
-      <label for="input-first-name">Votre Prénom :</label>
-      <input type="text" id="input-first-name" placeholder="Ex: Jean" />
-
-      <label for="input-last-name">Votre Nom :</label>
-      <input type="text" id="input-last-name" placeholder="Ex: Dupont" />
+      <label for="input-identifiant">Votre identifiant :</label>
+      <input type="text" id="input-identifiant" placeholder="Ex: exemple1" />
 
       <label for="input-password">Votre Mot de passe :</label>
       <input type="password" id="input-password" />
@@ -47,7 +41,7 @@
         <h2>Classement des Amis (Accès Admin)</h2>
         <ul class="ranking-list" id="admin-ranking-list"></ul>
       </div>
-      <button id="logout-button-admin" onclick="logout()">Se déconnecter</button>
+      <button id="logout-button" onclick="logout()">Se déconnecter</button>
     </section>
   </div>
 
