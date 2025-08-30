@@ -108,7 +108,7 @@ const usersData = [
         password: 'Gianniestbizzare123',
         points: 45,
         birthday: '06-27',
-        notes: 'JSP',
+        notes: 'Pour l‘instant tes gentile',
         numberOfCrosses: 0
     },
 ];
