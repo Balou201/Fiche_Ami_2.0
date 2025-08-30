@@ -52,7 +52,7 @@ const usersData = [
         password: 'Grizouthegoats',
         points: 122,
         birthday: '07-05',
-        notes: '👉 Aime le foot et les jeux vidéo',
+        notes: '👉 Aime le foot et les jeux vidéo (Suppression potentielle ⚠️)',
         numberOfCrosses: 0
     },
     {
@@ -106,9 +106,9 @@ const usersData = [
     {
         identifiant: 'Kiwi143',
         password: 'Gianniestbizzare123',
-        points: 45,
+        points: 51,
         birthday: '06-27',
-        notes: 'Pour l‘instant tes gentile',
+        notes: 'Pour l’instant, tu es très gentil 🙏, on va voir comment ça évolue 🔍',
         numberOfCrosses: 0
     },
 ];
