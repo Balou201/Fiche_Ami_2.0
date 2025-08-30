@@ -22,22 +22,9 @@ function getSanctionWarning(points) {
 }
 
 function checkBirthday(user) {
-    if (user.dateOfBirth === 'Inconnue') {
-        return false;
-    }
     const today = new Date();
-    const currentMonth = today.getMonth() + 1;
-    const currentDay = today.getDate();
-
-    const monthNames = ["janvier", "février", "mars", "avril", "mai", "juin",
-        "juillet", "août", "septembre", "octobre", "novembre", "décembre"
-    ];
-
-    const dateParts = user.dateOfBirth.toLowerCase().split(' ');
-    const userDay = parseInt(dateParts[0]);
-    const userMonth = monthNames.indexOf(dateParts[1]) + 1;
-
-    return userDay === currentDay && userMonth === currentMonth;
+    const currentMonthDay = `${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    return user.birthday === currentMonthDay;
 }
 
 // Affiche la fiche de l'utilisateur
@@ -49,16 +36,16 @@ function displayFriendshipFile(user) {
     // Ajoute la classe 'birthday-mode' au body si c'est l'anniversaire
     if (isBirthday) {
         document.body.classList.add('birthday-mode');
-        mainTitle.innerHTML = `Joyeux Anniversaire, ${user.firstName}! 🎉🎂`;
+        mainTitle.innerHTML = `Joyeux Anniversaire, ${user.identifiant}! 🎉🎂`;
     } else {
         document.body.classList.remove('birthday-mode');
-        mainTitle.textContent = `Bonjour, ${user.firstName}!`;
+        mainTitle.textContent = `Bonjour, ${user.identifiant}!`;
     }
 
     userInfoList.innerHTML = '';
 
     const sortedUsers = [...usersData].sort((a, b) => b.points - a.points);
-    const userRank = sortedUsers.findIndex(u => u.firstName === user.firstName && u.lastName === user.lastName) + 1;
+    const userRank = sortedUsers.findIndex(u => u.identifiant === user.identifiant) + 1;
 
     const sanctionMessage = getSanctionWarning(user.points);
     if (sanctionMessage) {
@@ -71,16 +58,12 @@ function displayFriendshipFile(user) {
     const crosses = '❌'.repeat(user.numberOfCrosses || 0);
 
     userInfoList.innerHTML += `
-        <li><span class="label">Nom complet :</span><span class="value">${user.firstName} ${user.lastName}</span></li>
+        <li><span class="label">Identifiant :</span><span class="value">${user.identifiant}</span></li>
         <li><span class="label">Points d’amitié :</span><span class="value">${user.points}</span></li>
         <li><span class="label">Rang :</span><span class="value">${getRank(user.points)}</span></li>
         <li><span class="label">Votre place :</span><span class="value">${userRank} / ${usersData.length}</span></li>
-        <li><span class="label">Date de naissance :</span><span class="value">${user.dateOfBirth || 'Non renseignée'}</span></li>
-        <li><span class="label">Relation amoureuse :</span><span class="value">${user.loveLife || 'Non renseignée'}</span></li>
-        <li><span class="label">Nombre de croix :</span><span class="value">${crosses}</span></li>
         <li><span class="label">Notes :</span><span class="value">${user.notes || 'Aucune note'}</span></li>
-        <li><span class="label">Adresse :</span><span class="value">${user.address || 'Non renseignée'}</span></li>
-        <li><span class="label">Numéro de téléphone :</span><span class="value">${user.phoneNumber || 'Non renseigné'}</span></li>
+        <li><span class="label">Nombre de croix :</span><span class="value">${crosses}</span></li>
     `;
 
     document.getElementById('user-login-section').style.display = 'none';
@@ -101,11 +84,11 @@ function displayAdminRanking() {
         rankItem.innerHTML = `
             <div class="ranking-item-content">
                 <span class="rank">${index + 1}.</span>
-                <span class="name">${user.firstName} ${user.lastName}</span>
+                <span class="name">${user.identifiant}</span>
                 <span class="points">${user.points} pts</span>
                 <span class="rank-name">${getRank(user.points)}</span>
             </div>
-            <button onclick="directLogin('${user.firstName}', '${user.lastName}')">Se connecter</button>
+            <button onclick="directLogin('${user.identifiant}')">Se connecter</button>
         `;
         adminRankingList.appendChild(rankItem);
     });
@@ -113,13 +96,13 @@ function displayAdminRanking() {
     document.getElementById('user-login-section').style.display = 'none';
     document.getElementById('user-result-section').style.display = 'none';
     document.getElementById('admin-result-section').style.display = 'block';
-    document.getElementById('main-title').textContent = `Bonjour, Gianni! (Admin)`;
+    document.getElementById('main-title').textContent = `Bonjour, g.voida! (Admin)`;
 }
 
 // Gère la connexion directe depuis l'admin
-function directLogin(firstName, lastName) {
+function directLogin(identifiant) {
     const userToLogin = usersData.find(user =>
-        user.firstName === firstName && user.lastName === lastName
+        user.identifiant === identifiant
     );
 
     if (userToLogin) {
@@ -131,27 +114,25 @@ function directLogin(firstName, lastName) {
 
 // Gère la connexion
 function accessFriendshipFile() {
-    const inputFirstName = document.getElementById('input-first-name').value.trim();
-    const inputLastName = document.getElementById('input-last-name').value.trim();
+    const inputIdentifiant = document.getElementById('input-identifiant').value.trim();
     const inputPassword = document.getElementById('input-password').value.trim();
     const loginError = document.getElementById('login-error');
 
     loginError.textContent = '';
 
-    if (!inputFirstName || !inputLastName || !inputPassword) {
+    if (!inputIdentifiant || !inputPassword) {
         loginError.textContent = 'Veuillez remplir tous les champs.';
         return;
     }
 
     const foundUser = usersData.find(user =>
-        user.firstName.toLowerCase() === inputFirstName.toLowerCase() &&
-        user.lastName.toLowerCase() === inputLastName.toLowerCase() &&
+        user.identifiant.toLowerCase() === inputIdentifiant.toLowerCase() &&
         user.password === inputPassword
     );
 
     if (foundUser) {
         localStorage.setItem('currentUser', JSON.stringify(foundUser));
-        if (foundUser.firstName.toLowerCase() === 'gianni' && foundUser.lastName.toLowerCase() === 'blaz') {
+        if (foundUser.identifiant.toLowerCase() === 'g.voida') {
             displayAdminRanking();
         } else {
             displayFriendshipFile(foundUser);
@@ -172,7 +153,7 @@ window.onload = function() {
     const currentUser = localStorage.getItem('currentUser');
     if (currentUser) {
         const user = JSON.parse(currentUser);
-        if (user.firstName.toLowerCase() === 'gianni' && user.lastName.toLowerCase() === 'blaz') {
+        if (user.identifiant.toLowerCase() === 'g.voida') {
             displayAdminRanking();
         } else {
             displayFriendshipFile(user);
