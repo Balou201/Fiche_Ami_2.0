@@ -32,7 +32,7 @@ const usersData = [
         numberOfCrosses: 0
     },
     {
-        identifiant: 'exemple4',
+        identifiant: 'Jo2000',
         password: 'XXX2025/2026',
         points: 77,
         birthday: '04-10',
