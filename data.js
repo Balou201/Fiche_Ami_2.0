@@ -48,7 +48,7 @@ const usersData = [
         numberOfCrosses: 0
     },
     {
-        identifiant: 'exemple6',
+        identifiant: 'Grizou',
         password: 'Grizouthegoats',
         points: 122,
         birthday: '07-05',
