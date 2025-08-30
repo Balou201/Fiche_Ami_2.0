@@ -1,17 +1,17 @@
 // Rangs selon points
-function getRank(points) {
-    if (points === 0) return '❌ Suspendue';
-    if (points <= 0) return 'Admin';
-    if (points <= 9) return '🕶️ Connaissance';
-    if (points <= 24) return '👋 Camarade';
-    if (points <= 49) return '😊 Pote';
-    if (points <= 74) return '🤗 Bon ami';
-    if (points <= 99) return '💛 Ami proche';
-    if (points <= 124) return '💎 Ami précieux';
-    if (points <= 149) return '🔒 Ami fidèle';
-    if (points <= 174) return '🔥 Ami de cœur';
-    if (points <= 199) return '🌟 Ami d’exception';
-    if (points >= 200) return '👑 Amitié légendaire';
+function getRank(user) {
+    if (user.identifiant === 'g.voida') return '👑 Admin';
+    if (user.points === 0) return '❌ Suspendue';
+    if (user.points <= 9) return '🕶️ Connaissance';
+    if (user.points <= 24) return '👋 Camarade';
+    if (user.points <= 49) return '😊 Pote';
+    if (user.points <= 74) return '🤗 Bon ami';
+    if (user.points <= 99) return '💛 Ami proche';
+    if (user.points <= 124) return '💎 Ami précieux';
+    if (user.points <= 149) return '🔒 Ami fidèle';
+    if (user.points <= 174) return '🔥 Ami de cœur';
+    if (user.points <= 199) return '🌟 Ami d’exception';
+    if (user.points >= 200) return '👑 Amitié légendaire';
     return 'Inconnu';
 }
 
@@ -61,7 +61,7 @@ function displayFriendshipFile(user) {
     userInfoList.innerHTML += `
         <li><span class="label">Identifiant :</span><span class="value">${user.identifiant}</span></li>
         <li><span class="label">Points d’amitié :</span><span class="value">${user.points}</span></li>
-        <li><span class="label">Rang :</span><span class="value">${getRank(user.points)}</span></li>
+        <li><span class="label">Rang :</span><span class="value">${getRank(user)}</span></li>
         <li><span class="label">Votre place :</span><span class="value">${userRank} / ${usersData.length}</span></li>
         <li><span class="label">Notes :</span><span class="value">${user.notes || 'Aucune note'}</span></li>
         <li><span class="label">Nombre de croix :</span><span class="value">${crosses}</span></li>
@@ -78,7 +78,8 @@ function displayAdminRanking() {
     adminRankingList.innerHTML = '';
     document.body.classList.remove('birthday-mode'); // S'assure de retirer le mode anniversaire pour l'admin
 
-    const sortedUsers = [...usersData].sort((a, b) => b.points - a.points);
+    const filteredUsers = usersData.filter(user => user.identifiant !== 'g.voida');
+    const sortedUsers = [...filteredUsers].sort((a, b) => b.points - a.points);
 
     sortedUsers.forEach((user, index) => {
         const rankItem = document.createElement('li');
@@ -87,7 +88,7 @@ function displayAdminRanking() {
                 <span class="rank">${index + 1}.</span>
                 <span class="name">${user.identifiant}</span>
                 <span class="points">${user.points} pts</span>
-                <span class="rank-name">${getRank(user.points)}</span>
+                <span class="rank-name">${getRank(user)}</span>
             </div>
             <button onclick="directLogin('${user.identifiant}')">Se connecter</button>
         `;
