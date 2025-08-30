@@ -1,170 +1,114 @@
 const usersData = [
     {
-        firstName: 'Sybille',
-        lastName: 'Vignal',
+        identifiant: 'exemple1',
         password: 'Boubourette11@',
         points: 185,
-        dateOfBirth: '13 décembre 2011 à 8h00',
+        birthday: '12-13',
         notes: 'Elle partage presque les mêmes centres d’intérêt, et elle est gentille et marrante.',
-        loveLife: 'Célibataire',
-        numberOfCrosses: 0,
-        address: '13 Rue de la République a Magenta (51530)',
-        phoneNumber: '07 44 71 72 18'
+        numberOfCrosses: 0
     },
     {
-        firstName: 'Gianni',
-        lastName: 'Blaz',
+        identifiant: 'g.voida', // Compte administrateur
         password: 'Exp22',
         points: 0,
-        dateOfBirth: 'Censure',
+        birthday: '01-01',
         notes: 'Administrateur du site.',
-        loveLife: 'Censure',
-        numberOfCrosses: 0,
-        address: 'Censure',
-        phoneNumber: 'Censure'
+        numberOfCrosses: 0
     },
     {
-        firstName: 'Gabin',
-        lastName: 'Lefevre',
+        identifiant: 'exemple2',
         password: 'PuLsViTe55',
         points: 75,
-        dateOfBirth: '04 avril 2012',
+        birthday: '04-04',
         notes: 'Pas tres dispo !',
-        loveLife: 'Célibataire',
-        numberOfCrosses: 1,
-        address: 'Inconnue',
-        phoneNumber: '06 52 04 87 18'
+        numberOfCrosses: 1
     },
     {
-        firstName: 'Victory-Anna',
-        lastName: 'Da Costa',
+        identifiant: 'exemple3',
         password: 'G14nn1LEGOAT',
         points: 100,
-        dateOfBirth: '4 mars 2012',
+        birthday: '03-04',
         notes: '👉 Gentille, marrante et un peu folle.',
-        loveLife: 'Célibataire',
-        numberOfCrosses: 0,
-        address: 'Inconnue',
-        phoneNumber: '07 66 60 24 60'
+        numberOfCrosses: 0
     },
     {
-        firstName: 'Joël',
-        lastName: 'Lagadec',
+        identifiant: 'exemple4',
         password: 'XXX2025/2026',
         points: 77,
-        dateOfBirth: '10 avril 2012',
+        birthday: '04-10',
         notes: '💻 Fan d’informatique',
-        loveLife: 'Célibataire',
-        numberOfCrosses: 0,
-        address: 'Inconnue',
-        phoneNumber: '07 75 74 14 36'
+        numberOfCrosses: 0
     },
     {
-        firstName: 'Louise',
-        lastName: 'Lebadi',
+        identifiant: 'exemple5',
         password: 'Giannietlouise',
         points: 175,
-        dateOfBirth: '13 mars 2012',
+        birthday: '03-13',
         notes: '🌞 Fan des colos',
-        loveLife: 'En couple',
-        numberOfCrosses: 0,
-        address: '148 avenue Gabriel Péri. (94 170) Le Perreux',
-        phoneNumber: '07 49 52 38 30'
+        numberOfCrosses: 0
     },
     {
-        firstName: 'Taylor',
-        lastName: 'Dejussel',
+        identifiant: 'exemple6',
         password: 'Grizouthegoats',
         points: 122,
-        dateOfBirth: '5 juillet 2012',
+        birthday: '07-05',
         notes: '👉 Aime le foot et les jeux vidéo',
-        loveLife: 'Célibataire',
-        numberOfCrosses: 0,
-        address: 'Inconnue',
-        phoneNumber: '07 49 52 38 30'
+        numberOfCrosses: 0
     },
     {
-        firstName: 'Leda',
-        lastName: 'Tiste',
+        identifiant: 'exemple7',
         password: '!ticket',
         points: 92,
-        dateOfBirth: '7 juillet 2010',
+        birthday: '07-07',
         notes: '🎮 Brawlhalla addict',
-        loveLife: 'Célibataire',
-        numberOfCrosses: 0,
-        address: 'Inconnue',
-        phoneNumber: 'Inconnue'
+        numberOfCrosses: 0
     },
     {
-        firstName: 'Denisa',
-        lastName: 'Gherasim',
+        identifiant: 'exemple8',
         password: 'Denisa142012_94.',
         points: 53,
-        dateOfBirth: '14 mars 2012',
+        birthday: '03-14',
         notes: '🤐 Parle pas trop',
-        loveLife: 'Célibataire',
-        numberOfCrosses: 0,
-        address: 'Inconnue',
-        phoneNumber: '07 83 76 64 01'
+        numberOfCrosses: 0
     },
     {
-        firstName: 'Ethan',
-        lastName: 'Beranger',
+        identifiant: 'exemple9',
         password: 'FireBird30&',
         points: 135,
-        dateOfBirth: '4 février 2011',
+        birthday: '02-04',
         notes: 'JSP',
-        loveLife: 'Célibataire',
-        numberOfCrosses: 0,
-        address: 'Inconnue',
-        phoneNumber: 'Inconnue'
+        numberOfCrosses: 0
     },
     {
-        firstName: 'Marilou',
-        lastName: 'Longuèvre',
+        identifiant: 'exemple10',
         password: '1234',
         points: 75,
-        dateOfBirth: '19 Aout 2009',
+        birthday: '08-19',
         notes: '🎪 Stalkeuse, fan de cirque, apparemment BE',
-        loveLife: 'En couple',
-        numberOfCrosses: 0,
-        address: '10 petite rue Ligny le chatel',
-        phoneNumber: '06 18 42 52 80'
+        numberOfCrosses: 0
     },
     {
-        firstName: 'Hugo',
-        lastName: 'Hejelouis',
+        identifiant: 'exemple11',
         password: 'Pell!883::%9,_*',
         points: 0,
-        dateOfBirth: '3 septembre 2012',
+        birthday: '09-03',
         notes: '👑 Technoblade | Fan de Minecraft & RP',
-        loveLife: 'Célibataire',
-        numberOfCrosses: 1,
-        address: 'Inconnue',
-        phoneNumber: 'Inconnue'
+        numberOfCrosses: 1
     },
     {
-        firstName: 'Simon',
-        lastName: 'Monnet',
+        identifiant: 'exemple12',
         password: 'simsim36785_',
         points: 75,
-        dateOfBirth: '24 décembre 2011',
+        birthday: '12-24',
         notes: '🎥 Potentiel futur YouTubeur, et très gentil',
-        loveLife: 'Célibataire',
-        numberOfCrosses: 0,
-        address: 'Inconnue',
-        phoneNumber: 'Inconnue'
+        numberOfCrosses: 0
     },
     {
-        firstName: 'Mahiti',
-        lastName: 'Payet',
+        identifiant: 'exemple13',
         password: 'Error404',
         points: 55,
-        dateOfBirth: '21 août 2015',
+        birthday: '08-21',
         notes: '🎮 Ami récent | Officiel | Connu sur Fortnite ⚠️ (risque de suppression)',
-        loveLife: 'JSP',
-        numberOfCrosses: 0,
-        address: 'Inconnue',
-        phoneNumber: 'Inconnue'
+        numberOfCrosses: 0
     },
 ];
