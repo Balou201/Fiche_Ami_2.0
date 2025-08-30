@@ -80,7 +80,7 @@ const usersData = [
         numberOfCrosses: 0
     },
     {
-        identifiant: 'exemple10',
+        identifiant: 'MariDfx',
         password: '1234',
         points: 75,
         birthday: '08-19',
