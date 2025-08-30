@@ -24,7 +24,7 @@ const usersData = [
         numberOfCrosses: 1
     },
     {
-        identifiant: 'exemple3',
+        identifiant: 'BunnyFunnyBestship',
         password: 'G14nn1LEGOAT',
         points: 100,
         birthday: '03-04',
@@ -104,11 +104,11 @@ const usersData = [
         numberOfCrosses: 0
     },
     {
-        identifiant: 'exemple13',
-        password: 'Error404',
-        points: 55,
-        birthday: '08-21',
-        notes: '🎮 Ami récent | Officiel | Connu sur Fortnite ⚠️ (risque de suppression)',
+        identifiant: 'Kiwi143',
+        password: 'Gianniestbizzare123',
+        points: 45,
+        birthday: '06-27',
+        notes: 'JSP',
         numberOfCrosses: 0
     },
 ];
