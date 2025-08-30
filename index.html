@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fiche Amitié - Accès Sécurisé</title>
+  <title>Fiche d’Amitié – Privée 🔒</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -14,34 +14,34 @@
 <body>
 
   <div class="container">
-    <h1 id="main-title">Accès à votre Fiche Amitié</h1>
+    <h1 id="main-title">Ouvrez votre Fiche Amitié ✨</h1>
 
     <section id="user-login-section">
-      <label for="input-identifiant">Votre identifiant :</label>
+      <label for="input-identifiant">Votre identifiant 🆔 :</label>
       <input type="text" id="input-identifiant" placeholder="Ex: exemple1" />
 
-      <label for="input-password">Votre Mot de passe :</label>
+      <label for="input-password">Votre mot de passe 🔑 :</label>
       <input type="password" id="input-password" />
 
-      <button onclick="accessFriendshipFile()">Accéder à ma fiche</button>
+      <button onclick="accessFriendshipFile()">Ouvrir ma fiche 📄</button>
 
       <p id="login-error"></p>
     </section>
 
     <section id="user-result-section" style="display: none;">
       <div class="result-container">
-        <h2 id="result-title">Votre Fiche d'Amitié</h2>
+        <h2 id="result-title">Votre Fiche d'Amitié 📖</h2>
         <ul class="info-list" id="user-info-list"></ul>
       </div>
-      <button id="logout-button" onclick="logout()">Se déconnecter</button>
+      <button id="logout-button" onclick="logout()">Se déconnecter 🔌</button>
     </section>
 
     <section id="admin-result-section" style="display: none;">
       <div class="admin-container">
-        <h2>Classement des Amis (Accès Admin)</h2>
+        <h2>Classement des Amis 🏆 (Accès Admin 🔐)</h2>
         <ul class="ranking-list" id="admin-ranking-list"></ul>
       </div>
-      <button id="logout-button" onclick="logout()">Se déconnecter</button>
+      <button id="logout-button" onclick="logout()">Se déconnecter 🔌</button>
     </section>
   </div>
 
