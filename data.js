@@ -10,7 +10,7 @@ const usersData = [
     {
         identifiant: 'g.voida', // Compte administrateur
         password: 'Exp22',
-        points: -1,
+        points: ∞,
         birthday: '01-01',
         notes: 'Administrateur du site.',
         numberOfCrosses: 0
