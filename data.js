@@ -10,7 +10,7 @@ const usersData = [
     {
         identifiant: 'g.voida', // Compte administrateur
         password: 'Exp22',
-        points: 0,
+        points: -1,
         birthday: '01-01',
         notes: 'Administrateur du site.',
         numberOfCrosses: 0
@@ -58,7 +58,7 @@ const usersData = [
     {
         identifiant: 'Papa',
         password: '!ticket',
-        points: 92,
+        points: 93,
         birthday: '07-07',
         notes: '🎮 Brawlhalla addict',
         numberOfCrosses: 0
