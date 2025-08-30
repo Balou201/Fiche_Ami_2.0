@@ -1,5 +1,6 @@
 // Rangs selon points
 function getRank(points) {
+    if (points <= 0) return 'Admin';
     if (points === 0) return '❌ Suspendue';
     if (points <= 9) return '🕶️ Connaissance';
     if (points <= 24) return '👋 Camarade';
