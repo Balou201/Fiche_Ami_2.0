@@ -16,7 +16,7 @@ const usersData = [
         numberOfCrosses: 0
     },
     {
-        identifiant: 'exemple2',
+        identifiant: 'Senku',
         password: 'PuLsViTe55',
         points: 75,
         birthday: '04-04',
