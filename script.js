@@ -78,7 +78,7 @@ function displayAdminRanking() {
     adminRankingList.innerHTML = '';
     document.body.classList.remove('birthday-mode'); // S'assure de retirer le mode anniversaire pour l'admin
 
-    const filteredUsers = usersData.filter(user => user.identifiant !== 'g.voida');
+    const filteredUsers = usersData.filter(user => user.identifiant !== 'g.voida' && user.points > 0);
     const sortedUsers = [...filteredUsers].sort((a, b) => b.points - a.points);
 
     sortedUsers.forEach((user, index) => {
@@ -133,12 +133,22 @@ function accessFriendshipFile() {
     );
 
     if (foundUser) {
-        localStorage.setItem('currentUser', JSON.stringify(foundUser));
+        // Redirige vers la page de classement si c'est l'administrateur
         if (foundUser.identifiant.toLowerCase() === 'g.voida') {
+            localStorage.setItem('currentUser', JSON.stringify(foundUser));
             displayAdminRanking();
-        } else {
-            displayFriendshipFile(foundUser);
+            return;
         }
+
+        // Bloque l'accès si le compte est suspendu
+        if (foundUser.points === 0) {
+            loginError.textContent = 'Votre compte a été suspendu. Vous ne pouvez pas vous connecter.';
+            return;
+        }
+
+        // Affiche la fiche pour les utilisateurs non suspendus
+        localStorage.setItem('currentUser', JSON.stringify(foundUser));
+        displayFriendshipFile(foundUser);
     } else {
         loginError.textContent = 'Informations de connexion incorrectes.';
     }
@@ -158,6 +168,11 @@ window.onload = function() {
         if (user.identifiant.toLowerCase() === 'g.voida') {
             displayAdminRanking();
         } else {
+            // Empêche les utilisateurs suspendus de rester connectés
+            if (user.points === 0) {
+                logout();
+                return;
+            }
             displayFriendshipFile(user);
         }
     }
