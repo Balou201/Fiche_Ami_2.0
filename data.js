@@ -10,7 +10,7 @@ const usersData = [
     {
         identifiant: 'g.voida', // Compte administrateur
         password: 'Exp22',
-        points: 23,
+        points: -1,
         birthday: '01-01',
         notes: 'Administrateur du site.',
         numberOfCrosses: 0
@@ -72,8 +72,8 @@ const usersData = [
         numberOfCrosses: 0
     },
     {
-        identifiant: 'exemple9',
-        password: 'FireBird30&',
+        identifiant: 'Fire',
+        password: 'Erreur404',
         points: 135,
         birthday: '02-04',
         notes: 'JSP',
@@ -96,7 +96,7 @@ const usersData = [
         numberOfCrosses: 1
     },
     {
-        identifiant: 'exemple12',
+        identifiant: 'Sim',
         password: 'simsim36785_',
         points: 75,
         birthday: '12-24',
