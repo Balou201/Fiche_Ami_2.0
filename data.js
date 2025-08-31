@@ -61,7 +61,7 @@ const usersData = [
         points: 93,
         birthday: '07-07',
         notes: '🎮 Brawlhalla addict',
-        numberOfCrosses: 0
+        numberOfCrosses: 1
     },
     {
         identifiant: 'Denisa1403',
