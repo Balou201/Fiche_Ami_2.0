@@ -60,7 +60,7 @@ const usersData = [
         password: '!ticket',
         points: 93,
         birthday: '07-07',
-        notes: '🎮 Brawlhalla addict',
+        notes: 'Passionné d’informatique, de montage et de jeux vidéo, plutôt sympa.',
         numberOfCrosses: 1
     },
     {
