@@ -1,7 +1,7 @@
 // Rangs selon points
 function getRank(user) {
     if (user.identifiant === 'g.voida') return '👑 Admin';
-    if (user.points === 0) return '❌ Suspendue';
+    if (user.points <= 0) return '❌ Suspendue';
     if (user.points <= 9) return '🕶️ Connaissance';
     if (user.points <= 24) return '👋 Camarade';
     if (user.points <= 49) return '😊 Pote';
@@ -28,8 +28,31 @@ function checkBirthday(user) {
     return user.birthday === currentMonthDay;
 }
 
-let adminSessionActive = false;
-let lastAccessedIdentifiant = null;
+// Fonction pour "bannir" l'utilisateur s'il ouvre les outils de développement
+function banUser() {
+    document.getElementById('main-content').style.display = 'none';
+    document.getElementById('banned-overlay').style.display = 'flex';
+}
+
+function checkDevTools() {
+    // Méthode 1: Vérification de la taille de la fenêtre
+    if (window.outerWidth - window.innerWidth > 200 || window.outerHeight - window.innerHeight > 200) {
+        banUser();
+    }
+}
+
+// Vérifie les outils de développement à intervalles réguliers
+setInterval(() => {
+    checkDevTools();
+}, 1000);
+
+// Écouteur d'événement pour la touche F12 (souvent utilisée pour ouvrir les outils)
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'F12') {
+        banUser();
+        e.preventDefault();
+    }
+});
 
 // Affiche la fiche de l'utilisateur
 function displayFriendshipFile(user) {
@@ -102,9 +125,6 @@ function displayAdminRanking() {
     document.getElementById('user-result-section').style.display = 'none';
     document.getElementById('admin-result-section').style.display = 'block';
     document.getElementById('main-title').textContent = `Bonjour, g.voida! (Admin)`;
-    
-    adminSessionActive = true;
-    lastAccessedIdentifiant = null;
 }
 
 // Gère la connexion directe depuis l'admin
@@ -115,7 +135,6 @@ function directLogin(identifiant) {
 
     if (userToLogin) {
         localStorage.setItem('currentUser', JSON.stringify(userToLogin));
-        lastAccessedIdentifiant = identifiant;
         displayFriendshipFile(userToLogin);
     }
 }
@@ -134,12 +153,6 @@ function accessFriendshipFile() {
         return;
     }
 
-    // Vérification de la session admin active
-    if (adminSessionActive && inputIdentifiant !== lastAccessedIdentifiant) {
-        loginError.textContent = 'Accès non autorisé après la déconnexion de l\'administrateur. Veuillez vous reconnecter au dernier compte consulté ou rafraîchir la page.';
-        return;
-    }
-
     const foundUser = usersData.find(user =>
         user.identifiant.toLowerCase() === inputIdentifiant.toLowerCase() &&
         user.password === inputPassword
@@ -154,7 +167,7 @@ function accessFriendshipFile() {
         }
 
         // Bloque l'accès si le compte est suspendu
-        if (foundUser.points === 0) {
+        if (foundUser.points <= 0) {
             loginError.textContent = 'Votre compte a été suspendu. Vous ne pouvez pas vous connecter.';
             return;
         }
@@ -170,8 +183,6 @@ function accessFriendshipFile() {
 // Gère la déconnexion
 function logout() {
     localStorage.removeItem('currentUser');
-    adminSessionActive = false;
-    lastAccessedIdentifiant = null;
     location.reload();
 }
 
@@ -184,11 +195,12 @@ window.onload = function() {
             displayAdminRanking();
         } else {
             // Empêche les utilisateurs suspendus de rester connectés
-            if (user.points === 0) {
+            if (user.points <= 0) {
                 logout();
                 return;
             }
             displayFriendshipFile(user);
         }
     }
+    checkDevTools();
 };
