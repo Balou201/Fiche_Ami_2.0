@@ -28,6 +28,9 @@ function checkBirthday(user) {
     return user.birthday === currentMonthDay;
 }
 
+let adminSessionActive = false;
+let lastAccessedIdentifiant = null;
+
 // Affiche la fiche de l'utilisateur
 function displayFriendshipFile(user) {
     const userInfoList = document.getElementById('user-info-list');
@@ -99,6 +102,9 @@ function displayAdminRanking() {
     document.getElementById('user-result-section').style.display = 'none';
     document.getElementById('admin-result-section').style.display = 'block';
     document.getElementById('main-title').textContent = `Bonjour, g.voida! (Admin)`;
+    
+    adminSessionActive = true;
+    lastAccessedIdentifiant = null;
 }
 
 // Gère la connexion directe depuis l'admin
@@ -109,6 +115,7 @@ function directLogin(identifiant) {
 
     if (userToLogin) {
         localStorage.setItem('currentUser', JSON.stringify(userToLogin));
+        lastAccessedIdentifiant = identifiant;
         displayFriendshipFile(userToLogin);
     }
 }
@@ -124,6 +131,12 @@ function accessFriendshipFile() {
 
     if (!inputIdentifiant || !inputPassword) {
         loginError.textContent = 'Veuillez remplir tous les champs.';
+        return;
+    }
+
+    // Vérification de la session admin active
+    if (adminSessionActive && inputIdentifiant !== lastAccessedIdentifiant) {
+        loginError.textContent = 'Accès non autorisé après la déconnexion de l\'administrateur. Veuillez vous reconnecter au dernier compte consulté ou rafraîchir la page.';
         return;
     }
 
@@ -157,6 +170,8 @@ function accessFriendshipFile() {
 // Gère la déconnexion
 function logout() {
     localStorage.removeItem('currentUser');
+    adminSessionActive = false;
+    lastAccessedIdentifiant = null;
     location.reload();
 }
 
