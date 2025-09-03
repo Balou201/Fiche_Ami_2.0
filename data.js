@@ -90,8 +90,8 @@ const usersData = [
     {
         identifiant: 'exemple11',
         password: 'Pell!883::%9,_*',
-        points: 10,
-        birthday: '09-03',
+        points: 0,
+        birthday: '09-05',
         notes: '👑 Technoblade | Fan de Minecraft & RP',
         numberOfCrosses: 1
     },
