@@ -52,7 +52,7 @@ const usersData = [
         password: 'Grizouthegoats',
         points: 122,
         birthday: '07-05',
-        notes: '👉 Aime le foot et les jeux vidéo (Suppression potentielle ⚠️)',
+        notes: '👉 Aime le foot et les jeux vidéo',
         numberOfCrosses: 0
     },
     {
@@ -76,7 +76,7 @@ const usersData = [
         password: 'Ethan0402',
         points: 135,
         birthday: '02-04',
-        notes: 'JSP',
+        notes: 'JSP (Suppression potentielle ⚠️)',
         numberOfCrosses: 0
     },
     {
