@@ -73,7 +73,7 @@ const usersData = [
     },
     {
         identifiant: 'Fire',
-        password: 'Erreur404',
+        password: 'Ethan0402',
         points: 135,
         birthday: '02-04',
         notes: 'JSP',
