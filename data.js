@@ -21,7 +21,7 @@ const usersData = [
         points: 75,
         birthday: '04-04',
         notes: 'Pas tres dispo !',
-        numberOfCrosses: 1
+        numberOfCrosses: 2
     },
     {
         identifiant: 'BunnyFunnyBestship',
@@ -69,7 +69,7 @@ const usersData = [
         points: 53,
         birthday: '03-14',
         notes: '🤐 Parle pas trop',
-        numberOfCrosses: 0
+        numberOfCrosses: 2
     },
     {
         identifiant: 'Fire',
