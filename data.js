@@ -34,7 +34,7 @@ const usersData = [
     {
         identifiant: 'Jo2000',
         password: 'XXX2025/2026',
-        points: 77,
+        points: 78,
         birthday: '04-10',
         notes: '💻 Fan d’informatique',
         numberOfCrosses: 0
@@ -42,7 +42,7 @@ const usersData = [
     {
         identifiant: 'louise.94z',
         password: 'Giannietlouise',
-        points: 175,
+        points: 177,
         birthday: '03-13',
         notes: '🌞 Fan des colos',
         numberOfCrosses: 0
@@ -50,7 +50,7 @@ const usersData = [
     {
         identifiant: 'Grizou',
         password: 'Grizouthegoats',
-        points: 122,
+        points: 141,
         birthday: '07-05',
         notes: '👉 Aime le foot et les jeux vidéo',
         numberOfCrosses: 0
