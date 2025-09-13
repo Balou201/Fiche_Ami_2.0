@@ -180,6 +180,19 @@ function accessFriendshipFile() {
     }
 }
 
+// Fonction pour afficher/cacher le système de rangs
+function toggleRanks() {
+    const ranksSection = document.getElementById('friendship-ranks-system');
+    const loginSection = document.getElementById('user-login-section');
+    if (ranksSection.style.display === 'none') {
+        ranksSection.style.display = 'block';
+        loginSection.style.display = 'none';
+    } else {
+        ranksSection.style.display = 'none';
+        loginSection.style.display = 'block';
+    }
+}
+
 // Gère la déconnexion
 function logout() {
     localStorage.removeItem('currentUser');
