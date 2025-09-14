@@ -90,7 +90,7 @@ const usersData = [
     {
         identifiant: 'tylio',
         password: 'Pell!883::%9,_*',
-        points: 0,
+        points: 178,
         birthday: '09-05',
         notes: '👑 Technoblade | Fan de Minecraft & RP',
         numberOfCrosses: 1
