@@ -347,43 +347,9 @@ button:hover {
 .link-like {
     cursor: pointer;
     color: #4f46e5;
+    text-decoration: none; /* Enlève le soulignement par défaut des liens */
+}
+
+.link-like:hover {
     text-decoration: underline;
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-#friendship-ranks-system {
-    text-align: left;
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f0f4f8;
-    border-radius: 8px;
-    border: 1px solid #d4e3f4;
-}
-
-#friendship-ranks-system h3 {
-    text-align: center;
-    margin-top: 0;
-    color: #1e3a8a;
-}
-
-.ranks-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.ranks-list li {
-    background-color: #e3f2fd;
-    padding: 10px 15px;
-    border-radius: 6px;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 500;
-}
-
-.ranks-list li .rank-name {
-    font-weight: 600;
-    color: #1a73e8;
 }
