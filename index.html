@@ -16,7 +16,9 @@
         <div class="container">
             <h1 id="main-title">Ouvrez votre Fiche Amitié ✨</h1>
             
-            <h2 id="toggle-ranks" class="link-like" onclick="toggleRanks()">Système de Rangs d'Amitié 🏆</h2>
+            <a href="https://balou201.github.io/Rangs-d-ami-officiel-site/" class="link-like" target="_blank">
+                <h2>Système de Rangs d'Amitié 🏆</h2>
+            </a>
 
             <section id="user-login-section">
                 <label for="input-identifiant">Votre identifiant 🆔 :</label>
@@ -28,23 +30,6 @@
                 <button onclick="accessFriendshipFile()">Ouvrir ma fiche 📄</button>
 
                 <p id="login-error"></p>
-            </section>
-
-            <section id="friendship-ranks-system" style="display: none;">
-                <h3>Voici comment les points sont attribués :</h3>
-                <ul class="ranks-list">
-                    <li><span class="rank-name">👑 Amitié légendaire</span> : 200+ points</li>
-                    <li><span class="rank-name">🌟 Ami d’exception</span> : 175-199 points</li>
-                    <li><span class="rank-name">🔥 Ami de cœur</span> : 150-174 points</li>
-                    <li><span class="rank-name">🔒 Ami fidèle</span> : 125-149 points</li>
-                    <li><span class="rank-name">💎 Ami précieux</span> : 100-124 points</li>
-                    <li><span class="rank-name">💛 Ami proche</span> : 75-99 points</li>
-                    <li><span class="rank-name">🤗 Bon ami</span> : 50-74 points</li>
-                    <li><span class="rank-name">😊 Pote</span> : 25-49 points</li>
-                    <li><span class="rank-name">👋 Camarade</span> : 10-24 points</li>
-                    <li><span class="rank-name">🕶️ Connaissance</span> : 1-9 points</li>
-                    <li><span class="rank-name">❌ Suspendue</span> : 0 ou moins</li>
-                </ul>
             </section>
 
             <section id="user-result-section" style="display: none;">
