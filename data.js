@@ -64,14 +64,6 @@ const usersData = [
         numberOfCrosses: 1
     },
     {
-        identifiant: 'Denisa1403',
-        password: 'Denisa142012_94.',
-        points: 53,
-        birthday: '03-14',
-        notes: '🤐 Parle pas trop',
-        numberOfCrosses: 2
-    },
-    {
         identifiant: 'Fire',
         password: 'Ethan0402',
         points: 135,
