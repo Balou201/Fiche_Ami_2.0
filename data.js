@@ -74,11 +74,11 @@ const usersData = [
     {
         identifiant: 'Fire',
         password: 'Ethan0402',
-        points: 135,
+        points: 99,
         birthday: '02-04',
         notes: 'JSP (Suppression potentielle ⚠️)',
         numberOfCrosses: 0,
-        blocage: 0
+        blocage: 1
     },
     {
         identifiant: 'MariDfx',
