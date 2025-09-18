@@ -5,7 +5,8 @@ const usersData = [
         points: 185,
         birthday: '12-13',
         notes: 'Elle partage presque les mêmes centres d’intérêt, et elle est gentille et marrante.',
-        numberOfCrosses: 0
+        numberOfCrosses: 0,
+        blocage: 0
     },
     {
         identifiant: 'g.voida', // Compte administrateur
@@ -13,7 +14,8 @@ const usersData = [
         points: -1,
         birthday: '01-01',
         notes: 'Administrateur du site.',
-        numberOfCrosses: 0
+        numberOfCrosses: 0,
+        blocage: 0
     },
     {
         identifiant: 'Senku',
@@ -21,7 +23,8 @@ const usersData = [
         points: 75,
         birthday: '04-04',
         notes: 'Pas tres dispo !',
-        numberOfCrosses: 2
+        numberOfCrosses: 2,
+        blocage: 0
     },
     {
         identifiant: 'BunnyFunnyBestship',
@@ -29,7 +32,8 @@ const usersData = [
         points: 100,
         birthday: '03-04',
         notes: '👉 Gentille, marrante et un peu folle.',
-        numberOfCrosses: 0
+        numberOfCrosses: 0,
+        blocage: 0
     },
     {
         identifiant: 'Jo2000',
@@ -37,7 +41,8 @@ const usersData = [
         points: 78,
         birthday: '04-10',
         notes: '💻 Fan d’informatique',
-        numberOfCrosses: 0
+        numberOfCrosses: 0,
+        blocage: 0
     },
     {
         identifiant: 'louise.94z',
@@ -45,7 +50,8 @@ const usersData = [
         points: 177,
         birthday: '03-13',
         notes: '🌞 Fan des colos',
-        numberOfCrosses: 0
+        numberOfCrosses: 0,
+        blocage: 0
     },
     {
         identifiant: 'Grizou',
@@ -53,7 +59,8 @@ const usersData = [
         points: 141,
         birthday: '07-05',
         notes: '👉 Aime le foot et les jeux vidéo',
-        numberOfCrosses: 0
+        numberOfCrosses: 0,
+        blocage: 0
     },
     {
         identifiant: 'Papa',
@@ -61,7 +68,8 @@ const usersData = [
         points: 93,
         birthday: '07-07',
         notes: 'Passionné d’informatique, de montage et de jeux vidéo, plutôt sympa.',
-        numberOfCrosses: 1
+        numberOfCrosses: 1,
+        blocage: 0
     },
     {
         identifiant: 'Fire',
@@ -69,7 +77,8 @@ const usersData = [
         points: 135,
         birthday: '02-04',
         notes: 'JSP (Suppression potentielle ⚠️)',
-        numberOfCrosses: 0
+        numberOfCrosses: 0,
+        blocage: 0
     },
     {
         identifiant: 'MariDfx',
@@ -77,7 +86,8 @@ const usersData = [
         points: 75,
         birthday: '08-19',
         notes: '🎪 Stalkeuse, fan de cirque, apparemment BE',
-        numberOfCrosses: 0
+        numberOfCrosses: 0,
+        blocage: 0
     },
     {
         identifiant: 'tylio',
@@ -85,7 +95,8 @@ const usersData = [
         points: 178,
         birthday: '09-05',
         notes: '👑 Technoblade | Fan de Minecraft & RP',
-        numberOfCrosses: 1
+        numberOfCrosses: 1,
+        blocage: 0
     },
     {
         identifiant: 'Sim',
@@ -93,7 +104,8 @@ const usersData = [
         points: 75,
         birthday: '12-24',
         notes: '🎥 Potentiel futur YouTubeur, et très gentil',
-        numberOfCrosses: 0
+        numberOfCrosses: 0,
+        blocage: 0
     },
     {
         identifiant: 'Kiwi143',
@@ -101,6 +113,7 @@ const usersData = [
         points: 51,
         birthday: '06-27',
         notes: 'Pour l’instant, tu es très gentil 🙏, on va voir comment ça évolue 🔍',
-        numberOfCrosses: 0
+        numberOfCrosses: 0,
+        blocage: 0
     },
 ];
