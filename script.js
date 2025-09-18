@@ -28,32 +28,6 @@ function checkBirthday(user) {
     return user.birthday === currentMonthDay;
 }
 
-// Fonction pour "bannir" l'utilisateur s'il ouvre les outils de développement
-function banUser() {
-    document.getElementById('main-content').style.display = 'none';
-    document.getElementById('banned-overlay').style.display = 'flex';
-}
-
-function checkDevTools() {
-    // Méthode 1: Vérification de la taille de la fenêtre
-    if (window.outerWidth - window.innerWidth > 200 || window.outerHeight - window.innerHeight > 200) {
-        banUser();
-    }
-}
-
-// Vérifie les outils de développement à intervalles réguliers
-setInterval(() => {
-    checkDevTools();
-}, 1000);
-
-// Écouteur d'événement pour la touche F12 (souvent utilisée pour ouvrir les outils)
-window.addEventListener('keydown', (e) => {
-    if (e.key === 'F12') {
-        banUser();
-        e.preventDefault();
-    }
-});
-
 // Affiche la fiche de l'utilisateur
 function displayFriendshipFile(user) {
     const userInfoList = document.getElementById('user-info-list');
@@ -210,5 +184,4 @@ window.onload = function() {
             displayFriendshipFile(user);
         }
     }
-    checkDevTools();
 };
