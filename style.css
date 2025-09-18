@@ -311,38 +311,6 @@ button:hover {
     100% { transform: translateY(100%); opacity: 0; }
 }
 
-/* Styles pour le bannissement */
-#banned-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.banned-message {
-    color: #fff;
-    font-size: 10vw;
-    font-weight: bold;
-    text-align: center;
-    animation: pulse 1s infinite alternate;
-}
-
-@keyframes pulse {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.1);
-    }
-}
-
 /* Nouveaux styles pour la liste de rangs */
 .link-like {
     cursor: pointer;
@@ -352,4 +320,16 @@ button:hover {
 
 .link-like:hover {
     text-decoration: underline;
+}
+
+/* Style pour le message de blocage */
+.blockage-warning {
+    color: #9f1239;
+    font-weight: 600;
+    background-color: #fef2f2;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #fca5a5;
+    margin-bottom: 20px;
+    text-align: center;
 }
