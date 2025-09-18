@@ -81,6 +81,14 @@ function displayFriendshipFile(user) {
         warningItem.textContent = sanctionMessage;
         userInfoList.appendChild(warningItem);
     }
+    
+    // Vérifie et affiche le message de blocage si la stat est active
+    if (user.blocage === 1) {
+        const blockageItem = document.createElement('li');
+        blockageItem.className = 'blockage-warning';
+        blockageItem.textContent = `🚫 Vous êtes actuellement bloqué(e) à ce rang et ne pouvez pas progresser.`;
+        userInfoList.appendChild(blockageItem);
+    }
 
     const crosses = '❌'.repeat(user.numberOfCrosses || 0);
 
