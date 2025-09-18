@@ -69,7 +69,7 @@ const usersData = [
         birthday: '07-07',
         notes: 'Passionné d’informatique, de montage et de jeux vidéo, plutôt sympa.',
         numberOfCrosses: 1,
-        blocage: 0
+        blocage: 1
     },
     {
         identifiant: 'Fire',
