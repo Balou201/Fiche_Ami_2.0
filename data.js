@@ -2,10 +2,10 @@ const usersData = [
     {
         identifiant: 'mkprod',
         password: 'Boubourette11@',
-        points: 186,
+        points: 176,
         birthday: '12-13',
         notes: 'Elle partage presque les mêmes centres d’intérêt, et elle est gentille et marrante.',
-        numberOfCrosses: 0,
+        numberOfCrosses: 1,
         blocage: 0
     },
     {
