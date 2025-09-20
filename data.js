@@ -95,7 +95,7 @@ const usersData = [
         points: 179,
         birthday: '09-05',
         notes: '👑 Technoblade | Fan de Minecraft & RP',
-        numberOfCrosses: 1,
+        numberOfCrosses: 0,
         blocage: 0
     },
     {
