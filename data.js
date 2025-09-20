@@ -63,15 +63,6 @@ const usersData = [
         blocage: 1
     },
     {
-        identifiant: 'Fire',
-        password: 'Ethan0402',
-        points: 90,
-        birthday: '02-04',
-        notes: 'JSP (Suppression |potentielle| ⚠️)',
-        numberOfCrosses: 0,
-        blocage: 1
-    },
-    {
         identifiant: 'MariDfx',
         password: '1234',
         points: 74,
