@@ -18,15 +18,6 @@ const usersData = [
         blocage: 0
     },
     {
-        identifiant: 'Senku',
-        password: 'PuLsViTe55',
-        points: 75,
-        birthday: '04-04',
-        notes: 'Pas tres dispo !',
-        numberOfCrosses: 2,
-        blocage: 0
-    },
-    {
         identifiant: 'BunnyFunnyBestship',
         password: 'G14nn1LEGOAT',
         points: 100,
@@ -74,9 +65,9 @@ const usersData = [
     {
         identifiant: 'Fire',
         password: 'Ethan0402',
-        points: 97,
+        points: 90,
         birthday: '02-04',
-        notes: 'JSP (Suppression potentielle ⚠️)',
+        notes: 'JSP (Suppression |potentielle| ⚠️)',
         numberOfCrosses: 0,
         blocage: 1
     },
