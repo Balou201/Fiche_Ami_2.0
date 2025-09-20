@@ -2,7 +2,7 @@ const usersData = [
     {
         identifiant: 'mkprod',
         password: 'Boubourette11@',
-        points: 185,
+        points: 186,
         birthday: '12-13',
         notes: 'Elle partage presque les mêmes centres d’intérêt, et elle est gentille et marrante.',
         numberOfCrosses: 0,
@@ -65,7 +65,7 @@ const usersData = [
     {
         identifiant: 'Papa',
         password: '!ticket',
-        points: 93,
+        points: 92,
         birthday: '07-07',
         notes: 'Passionné d’informatique, de montage et de jeux vidéo, plutôt sympa.',
         numberOfCrosses: 1,
@@ -74,7 +74,7 @@ const usersData = [
     {
         identifiant: 'Fire',
         password: 'Ethan0402',
-        points: 99,
+        points: 97,
         birthday: '02-04',
         notes: 'JSP (Suppression potentielle ⚠️)',
         numberOfCrosses: 0,
@@ -83,7 +83,7 @@ const usersData = [
     {
         identifiant: 'MariDfx',
         password: '1234',
-        points: 75,
+        points: 74,
         birthday: '08-19',
         notes: '🎪 Stalkeuse, fan de cirque, apparemment BE',
         numberOfCrosses: 0,
@@ -92,7 +92,7 @@ const usersData = [
     {
         identifiant: 'tylio',
         password: 'Pell!883::%9,_*',
-        points: 178,
+        points: 179,
         birthday: '09-05',
         notes: '👑 Technoblade | Fan de Minecraft & RP',
         numberOfCrosses: 1,
@@ -101,7 +101,7 @@ const usersData = [
     {
         identifiant: 'Sim',
         password: 'simsim36785_',
-        points: 75,
+        points: 76,
         birthday: '12-24',
         notes: '🎥 Potentiel futur YouTubeur, et très gentil',
         numberOfCrosses: 0,
