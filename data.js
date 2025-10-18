@@ -91,7 +91,7 @@ const usersData = [
     },
     {
         identifiant: 'Kiwi143',
-        password: 'Gianniestbizzare123',
+        password: 'Error404',
         points: 51,
         birthday: '06-27',
         notes: 'Pour l’instant, tu es très gentil 🙏, on va voir comment ça évolue 🔍',
