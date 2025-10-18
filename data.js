@@ -2,7 +2,7 @@ const usersData = [
     {
         identifiant: 'mkprod',
         password: 'Boubourette11@',
-        points: 176,
+        points: 175,
         birthday: '12-13',
         notes: 'Elle partage presque les mêmes centres d’intérêt, et elle est gentille et marrante.',
         numberOfCrosses: 1,
@@ -20,7 +20,7 @@ const usersData = [
     {
         identifiant: 'BunnyFunnyBestship',
         password: 'G14nn1LEGOAT',
-        points: 100,
+        points: 90,
         birthday: '03-04',
         notes: '👉 Gentille, marrante et un peu folle.',
         numberOfCrosses: 0,
@@ -47,7 +47,7 @@ const usersData = [
     {
         identifiant: 'Grizou',
         password: 'Grizouthegoats',
-        points: 141,
+        points: 161,
         birthday: '07-05',
         notes: '👉 Aime le foot et les jeux vidéo',
         numberOfCrosses: 0,
@@ -59,7 +59,7 @@ const usersData = [
         points: 92,
         birthday: '07-07',
         notes: 'Passionné d’informatique, de montage et de jeux vidéo, plutôt sympa.',
-        numberOfCrosses: 1,
+        numberOfCrosses: 2,
         blocage: 1
     },
     {
@@ -95,7 +95,7 @@ const usersData = [
         points: 51,
         birthday: '06-27',
         notes: 'Pour l’instant, tu es très gentil 🙏, on va voir comment ça évolue 🔍',
-        numberOfCrosses: 0,
+        numberOfCrosses: 1,
         blocage: 0
     },
 ];
