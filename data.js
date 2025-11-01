@@ -38,9 +38,9 @@ const usersData = [
     {
         identifiant: 'louise.94z',
         password: 'Giannietlouise',
-        points: 175,
+        points: 176,
         birthday: '03-13',
-        notes: '🌞 Fan des colos',
+        notes: 'Etrange ami de longue date',
         numberOfCrosses: 0,
         blocage: 0
     },
