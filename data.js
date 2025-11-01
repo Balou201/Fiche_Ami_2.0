@@ -42,7 +42,7 @@ const usersData = [
         birthday: '03-13',
         notes: '🌞 Fan des colos',
         numberOfCrosses: 0,
-        blocage: 1
+        blocage: 0
     },
     {
         identifiant: 'Grizou',
