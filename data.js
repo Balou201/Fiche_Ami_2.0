@@ -53,10 +53,10 @@ const usersData = [
         numberOfCrosses: 0,
         blocage: 0
     },
-    {
+    { 
         identifiant: 'Papa',
         password: '!ticket',
-        points: 92,
+        points: 92, 
         birthday: '07-07',
         notes: 'Passionné d’informatique, de montage et de jeux vidéo, plutôt sympa.',
         numberOfCrosses: 2,
@@ -74,7 +74,7 @@ const usersData = [
     {
         identifiant: 'tylio',
         password: 'Pell!883::%9,_*',
-        points: 179,
+        points: 179, 
         birthday: '09-05',
         notes: '👑 Technoblade | Fan de Minecraft & RP',
         numberOfCrosses: 0,
@@ -99,3 +99,5 @@ const usersData = [
         blocage: 0
     },
 ];
+
+<!-- Mkpord = 175 -->
