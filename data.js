@@ -2,7 +2,7 @@ const usersData = [
     {
         identifiant: 'mkprod',
         password: 'Boubourette11@',
-        points: 175,
+        points: 0, // 175
         birthday: '12-13',
         notes: 'Elle partage presque les mêmes centres d’intérêt, et elle est gentille et marrante.',
         numberOfCrosses: 1,
@@ -99,5 +99,3 @@ const usersData = [
         blocage: 0
     },
 ];
-
-<!-- Mkpord = 175 -->
