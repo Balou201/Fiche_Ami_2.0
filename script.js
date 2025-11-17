@@ -1,7 +1,7 @@
 // Rangs selon points
 function getRank(user) {
     if (user.identifiant === 'g.voida') return '👑 Admin';
-    if (user.points <= 0) return '❌ Suspendue';
+    if (user.points <= 0) return '❌ Suspendue'; // Ceci gère le cas des points à 0 pour l'affichage du rang
     if (user.points <= 9) return '🕶️ Connaissance';
     if (user.points <= 24) return '👋 Camarade';
     if (user.points <= 49) return '😊 Pote';
@@ -86,11 +86,18 @@ function displayAdminRanking() {
     adminRankingList.innerHTML = '';
     document.body.classList.remove('birthday-mode'); // S'assure de retirer le mode anniversaire pour l'admin
 
-    const filteredUsers = usersData.filter(user => user.identifiant !== 'g.voida' && user.points > 0);
+    // MODIFICATION CI-DESSOUS : user.points >= 0 permet d'inclure les comptes suspendus (points à 0)
+    const filteredUsers = usersData.filter(user => user.identifiant !== 'g.voida' && user.points >= 0);
     const sortedUsers = [...filteredUsers].sort((a, b) => b.points - a.points);
 
     sortedUsers.forEach((user, index) => {
         const rankItem = document.createElement('li');
+        
+        // NOUVELLE LOGIQUE : Ajout de la classe CSS si les points sont à 0
+        if (user.points === 0) {
+            rankItem.classList.add('compte-suspendu'); 
+        }
+
         rankItem.innerHTML = `
             <div class="ranking-item-content">
                 <span class="rank">${index + 1}.</span>
