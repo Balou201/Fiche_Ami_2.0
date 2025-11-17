@@ -2,7 +2,7 @@ const usersData = [
     {
         identifiant: 'mkprod',
         password: 'Boubourette11@',
-        points: 0, // 175
+        points: 0, // 176
         birthday: '12-13',
         notes: 'Elle partage presque les mêmes centres d’intérêt, et elle est gentille et marrante.',
         numberOfCrosses: 1,
@@ -20,7 +20,7 @@ const usersData = [
     {
         identifiant: 'BunnyFunnyBestship',
         password: 'G14nn1LEGOAT',
-        points: 90,
+        points: 88,
         birthday: '03-04',
         notes: '👉 Gentille, marrante et un peu folle.',
         numberOfCrosses: 0,
@@ -29,7 +29,7 @@ const usersData = [
     {
         identifiant: 'Jo2000',
         password: 'XXX2025/2026',
-        points: 78,
+        points: 83,
         birthday: '04-10',
         notes: '💻 Fan d’informatique',
         numberOfCrosses: 0,
@@ -38,7 +38,7 @@ const usersData = [
     {
         identifiant: 'louise.94z',
         password: 'Giannietlouise',
-        points: 176,
+        points: 0, // 176
         birthday: '03-13',
         notes: 'Etrange ami de longue date',
         numberOfCrosses: 0,
@@ -47,7 +47,7 @@ const usersData = [
     {
         identifiant: 'Grizou',
         password: 'Grizouthegoats',
-        points: 161,
+        points: 167,
         birthday: '07-05',
         notes: '👉 Aime le foot et les jeux vidéo',
         numberOfCrosses: 0,
@@ -56,7 +56,7 @@ const usersData = [
     { 
         identifiant: 'Papa',
         password: '!ticket',
-        points: 92, 
+        points: 0, // Inactif - 90
         birthday: '07-07',
         notes: 'Passionné d’informatique, de montage et de jeux vidéo, plutôt sympa.',
         numberOfCrosses: 2,
@@ -65,7 +65,7 @@ const usersData = [
     {
         identifiant: 'MariDfx',
         password: '1234',
-        points: 74,
+        points: 77,
         birthday: '08-19',
         notes: '🎪 Stalkeuse, fan de cirque, apparemment BE',
         numberOfCrosses: 0,
@@ -74,7 +74,7 @@ const usersData = [
     {
         identifiant: 'tylio',
         password: 'Pell!883::%9,_*',
-        points: 179, 
+        points: 0, // 177 
         birthday: '09-05',
         notes: '👑 Technoblade | Fan de Minecraft & RP',
         numberOfCrosses: 0,
@@ -83,7 +83,7 @@ const usersData = [
     {
         identifiant: 'Sim',
         password: 'simsim36785_',
-        points: 76,
+        points: 87,
         birthday: '12-24',
         notes: '🎥 Potentiel futur YouTubeur, et très gentil',
         numberOfCrosses: 0,
@@ -92,7 +92,7 @@ const usersData = [
     {
         identifiant: 'Kiwi143',
         password: 'BonsoirParis25',
-        points: 51,
+        points: 71,
         birthday: '06-27',
         notes: 'Pour l’instant, tu es très gentil 🙏, on va voir comment ça évolue 🔍',
         numberOfCrosses: 1,
