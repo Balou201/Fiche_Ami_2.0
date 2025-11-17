@@ -72,15 +72,6 @@ const usersData = [
         blocage: 0
     },
     {
-        identifiant: 'tylio',
-        password: 'Pell!883::%9,_*',
-        points: 0, // 177 
-        birthday: '09-05',
-        notes: '👑 Technoblade | Fan de Minecraft & RP',
-        numberOfCrosses: 0,
-        blocage: 0
-    },
-    {
         identifiant: 'Sim',
         password: 'simsim36785_',
         points: 87,
