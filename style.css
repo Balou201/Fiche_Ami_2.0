@@ -333,3 +333,35 @@ button:hover {
     margin-bottom: 20px;
     text-align: center;
 }
+
+/* --- Style pour les comptes suspendus (Points = 0) --- */
+/* Cette classe cible les éléments <li> du classement admin dont les points sont à 0. */
+.compte-suspendu {
+    /* Couleur du texte en rouge foncé */
+    color: darkred !important; 
+    
+    /* Couleur de fond très claire pour l'ensemble de la ligne */
+    background-color: #ffe0e0 !important; 
+    
+    /* Optionnel : Ajoute une barre rouge sur le côté gauche */
+    border-left: 5px solid darkred; 
+    /* Ajuste le padding pour compenser la bordure */
+    padding-left: 15px; 
+    
+    font-style: italic;
+    /* S'assurer que le séparateur reste visible au survol */
+    border-bottom: 1px solid #fa8072 !important; 
+}
+
+/* S'assurer que les éléments spécifiques (nom, points) dans la ligne sont aussi en rouge */
+.compte-suspendu .name,
+.compte-suspendu .points,
+.compte-suspendu .rank-name {
+    color: darkred !important;
+}
+
+/* Rendre le bouton 'Se connecter' moins intrusif ou plus adapté au statut */
+.compte-suspendu button {
+    background-color: #ef4444; /* Rouge pour indiquer l'action sur compte suspendu */
+    color: white;
+}
