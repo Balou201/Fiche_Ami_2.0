@@ -4,7 +4,7 @@ const usersData = [
         password: 'Boubourette11@',
         points: 0, // 176
         birthday: '12-13',
-        notes: 'Elle partage presque les mêmes centres d’intérêt, et elle est gentille et marrante.',
+        notes: 'Elle partage presque les mêmes centres d’intérêt, et elle est gentille et marrante. Un peu en froid en ce moment',
         numberOfCrosses: 1,
         blocage: 0
     },
@@ -22,7 +22,7 @@ const usersData = [
         password: 'G14nn1LEGOAT',
         points: 88,
         birthday: '03-04',
-        notes: '👉 Gentille, marrante et un peu folle.',
+        notes: '👉 Occupée, Flemme de beaucoup de chose ect...',
         numberOfCrosses: 0,
         blocage: 0
     },
@@ -40,7 +40,7 @@ const usersData = [
         password: 'Giannietlouise',
         points: 0, // 176
         birthday: '03-13',
-        notes: 'Etrange ami de longue date',
+        notes: 'Ami de longue date inactive qui ne repond pas au appel est tres occupé de prend pas le temps de parler envoie pas de message ect... Compliqué',
         numberOfCrosses: 0,
         blocage: 0
     },
@@ -49,7 +49,7 @@ const usersData = [
         password: 'Grizouthegoats',
         points: 167,
         birthday: '07-05',
-        notes: '👉 Aime le foot et les jeux vidéo',
+        notes: 'A besoin de me faire un peu plus confiance et moins au gens que tu connais pas et ne pas croire trop les infulenceurs.',
         numberOfCrosses: 0,
         blocage: 0
     },
@@ -59,7 +59,7 @@ const usersData = [
         points: 0, // Inactif - 90
         birthday: '07-07',
         notes: 'Passionné d’informatique, de montage et de jeux vidéo, plutôt sympa.',
-        numberOfCrosses: 2,
+        numberOfCrosses: 3,
         blocage: 1
     },
     {
@@ -67,7 +67,7 @@ const usersData = [
         password: '1234',
         points: 77,
         birthday: '08-19',
-        notes: '🎪 Stalkeuse, fan de cirque, apparemment BE',
+        notes: '🎪 Stalkeuse, fan de cirque, apparemment BE, Bon courage',
         numberOfCrosses: 0,
         blocage: 0
     },
@@ -76,7 +76,7 @@ const usersData = [
         password: 'simsim36785_',
         points: 87,
         birthday: '12-24',
-        notes: '🎥 Potentiel futur YouTubeur, et très gentil',
+        notes: 'A surement du Potentiel , et très gentil voir trop parfois, réactif',
         numberOfCrosses: 0,
         blocage: 0
     },
@@ -85,8 +85,8 @@ const usersData = [
         password: 'BonsoirParis25',
         points: 71,
         birthday: '06-27',
-        notes: 'Pour l’instant, tu es très gentil 🙏, on va voir comment ça évolue 🔍',
-        numberOfCrosses: 1,
+        notes: 'Pour l’instant, tu es très gentil, pas trop trop interactive a besoin que on vienne lui parler pour pouvoir engager une disscusion.',
+        numberOfCrosses: 0,
         blocage: 0
     },
 ];
