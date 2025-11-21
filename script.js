@@ -1,24 +1,7 @@
-// Fonction asynchrone pour hacher le mot de passe en utilisant SHA-256 (API SubtleCrypto)
-// C'est essentiel pour ne pas stocker/comparer les mots de passe en clair.
-async function hashPassword(password) {
-    // 1. Convertir la chaîne en ArrayBuffer
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password);
-    
-    // 2. Calculer le hachage SHA-256
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    
-    // 3. Convertir l'ArrayBuffer en chaîne hexadécimale
-    const hashArray = Array.from(new Uint8Array(hashBuffer)); 
-    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); 
-    
-    return hashHex;
-}
-
 // Rangs selon points
 function getRank(user) {
     if (user.identifiant === 'g.voida') return '👑 Admin';
-    if (user.points <= 0) return '❌ Suspendue';
+    if (user.points <= 0) return '❌ Suspendue'; // Ceci gère le cas des points à 0 pour l'affichage du rang
     if (user.points <= 9) return '🕶️ Connaissance';
     if (user.points <= 24) return '👋 Camarade';
     if (user.points <= 49) return '😊 Pote';
@@ -41,7 +24,6 @@ function getSanctionWarning(points) {
 
 function checkBirthday(user) {
     const today = new Date();
-    // Utilise toLocaleString pour un format fiable JJ/MM ou MM/JJ
     const currentMonthDay = `${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
     return user.birthday === currentMonthDay;
 }
@@ -52,6 +34,7 @@ function displayFriendshipFile(user) {
     const mainTitle = document.getElementById('main-title');
     const isBirthday = checkBirthday(user);
     
+    // Ajoute la classe 'birthday-mode' au body si c'est l'anniversaire
     if (isBirthday) {
         document.body.classList.add('birthday-mode');
         mainTitle.innerHTML = `Joyeux Anniversaire, ${user.identifiant}! 🎉🎂`;
@@ -73,6 +56,7 @@ function displayFriendshipFile(user) {
         userInfoList.appendChild(warningItem);
     }
     
+    // Vérifie et affiche le message de blocage si la stat est active
     if (user.blocage === 1) {
         const blockageItem = document.createElement('li');
         blockageItem.className = 'blockage-warning';
@@ -100,15 +84,16 @@ function displayFriendshipFile(user) {
 function displayAdminRanking() {
     const adminRankingList = document.getElementById('admin-ranking-list');
     adminRankingList.innerHTML = '';
-    document.body.classList.remove('birthday-mode');
+    document.body.classList.remove('birthday-mode'); // S'assure de retirer le mode anniversaire pour l'admin
 
-    // Filtre les utilisateurs, exclut l'admin et inclut les suspendus (points >= 0)
+    // MODIFICATION CI-DESSOUS : user.points >= 0 permet d'inclure les comptes suspendus (points à 0)
     const filteredUsers = usersData.filter(user => user.identifiant !== 'g.voida' && user.points >= 0);
     const sortedUsers = [...filteredUsers].sort((a, b) => b.points - a.points);
 
     sortedUsers.forEach((user, index) => {
         const rankItem = document.createElement('li');
         
+        // NOUVELLE LOGIQUE : Ajout de la classe CSS si les points sont à 0
         if (user.points === 0) {
             rankItem.classList.add('compte-suspendu'); 
         }
@@ -132,8 +117,6 @@ function displayAdminRanking() {
 }
 
 // Gère la connexion directe depuis l'admin
-// CONSEIL : Cette fonction devrait être désactivée ou très sécurisée 
-// car elle permet de se connecter sans mot de passe.
 function directLogin(identifiant) {
     const userToLogin = usersData.find(user =>
         user.identifiant === identifiant
@@ -146,8 +129,8 @@ function directLogin(identifiant) {
 }
 
 
-// Gère la connexion (RENDU ASYNCHRONE pour le hachage)
-async function accessFriendshipFile() {
+// Gère la connexion
+function accessFriendshipFile() {
     const inputIdentifiant = document.getElementById('input-identifiant').value.trim();
     const inputPassword = document.getElementById('input-password').value.trim();
     const loginError = document.getElementById('login-error');
@@ -159,26 +142,12 @@ async function accessFriendshipFile() {
         return;
     }
 
-    // Hacher le mot de passe entré par l'utilisateur
-    // Ceci s'assure que le mot de passe entré n'est JAMAIS comparé en clair
-    let hashedInputPassword;
-    try {
-        hashedInputPassword = await hashPassword(inputPassword);
-    } catch (e) {
-        // En cas d'erreur de hachage (par exemple, navigateur non compatible SubtleCrypto)
-        console.error("Erreur de hachage:", e);
-        loginError.textContent = 'Une erreur de sécurité est survenue. Veuillez réessayer.';
-        return;
-    }
-
-    // Trouver l'utilisateur par identifiant
     const foundUser = usersData.find(user =>
-        user.identifiant.toLowerCase() === inputIdentifiant.toLowerCase()
+        user.identifiant.toLowerCase() === inputIdentifiant.toLowerCase() &&
+        user.password === inputPassword
     );
 
-    // Vérification de l'utilisateur ET du mot de passe haché
-    if (foundUser && foundUser.password === hashedInputPassword) {
-        
+    if (foundUser) {
         // Redirige vers la page de classement si c'est l'administrateur
         if (foundUser.identifiant.toLowerCase() === 'g.voida') {
             localStorage.setItem('currentUser', JSON.stringify(foundUser));
@@ -186,7 +155,7 @@ async function accessFriendshipFile() {
             return;
         }
 
-        // Bloque l'accès si le compte est suspendu (points <= 0)
+        // Bloque l'accès si le compte est suspendu
         if (foundUser.points <= 0) {
             loginError.textContent = 'Votre compte a été suspendu. Vous ne pouvez pas vous connecter.';
             return;
@@ -196,7 +165,6 @@ async function accessFriendshipFile() {
         localStorage.setItem('currentUser', JSON.stringify(foundUser));
         displayFriendshipFile(foundUser);
     } else {
-        // Le message d'erreur reste générique pour éviter l'énumération des utilisateurs
         loginError.textContent = 'Informations de connexion incorrectes.';
     }
 }
@@ -222,15 +190,5 @@ window.onload = function() {
             }
             displayFriendshipFile(user);
         }
-    }
-    
-    // Attache l'écouteur d'événement à la soumission du formulaire
-    const loginForm = document.getElementById('login-form');
-    if (loginForm) {
-        // Écouteur d'événement pour le bouton/formulaire de connexion
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Empêche le rechargement de la page
-            accessFriendshipFile(); // Appelle la fonction de connexion asynchrone
-        });
     }
 };
