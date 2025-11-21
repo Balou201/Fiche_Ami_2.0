@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Hachage SHA-256 (Unidirectionnel)</title>
+    <style>
+        /* CSS pour un look minimaliste */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Inclure padding et bordure dans la largeur */
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #result-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        #hash-output {
+            word-break: break-all; /* Assure que le long hachage ne déborde pas */
+            font-family: monospace;
+            font-size: 14px;
+            color: #0056b3;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔒 Générateur SHA-256</h1>
+
+        <label for="input-text">Texte à Hacher (Mot de Passe) :</label>
+        <input type="text" id="input-text" placeholder="Entrez le texte ici..." />
+
+        <button onclick="generateHash()">Générer le Hachage ➡️</button>
+
+        <div id="result-container" style="display:none;">
+            <p><strong>Hachage SHA-256 (64 caractères) :</strong></p>
+            <p id="hash-output"></p>
+        </div>
+    </div>
+
+    <script>
+        // Fonction asynchrone pour hacher le mot de passe en utilisant SHA-256 (API SubtleCrypto)
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            
+            // Calculer le hachage
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            
+            // Convertir l'ArrayBuffer en chaîne hexadécimale (minuscules)
+            const hashArray = Array.from(new Uint8Array(hashBuffer)); 
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); 
+            
+            return hashHex;
+        }
+
+        // Gère l'événement du bouton
+        async function generateHash() {
+            const inputText = document.getElementById('input-text').value.trim();
+            const hashOutput = document.getElementById('hash-output');
+            const resultContainer = document.getElementById('result-container');
+
+            if (!inputText) {
+                hashOutput.textContent = 'Veuillez entrer du texte.';
+                resultContainer.style.display = 'block';
+                return;
+            }
+
+            try {
+                // Appel de la fonction de hachage
+                const hashedText = await hashPassword(inputText);
+                
+                // Affichage du résultat
+                hashOutput.textContent = hashedText;
+                resultContainer.style.display = 'block';
+            } catch (e) {
+                hashOutput.textContent = 'Erreur lors du hachage. Veuillez vérifier que votre navigateur supporte l\'API SubtleCrypto.';
+                console.error("Erreur de hachage:", e);
+                resultContainer.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
